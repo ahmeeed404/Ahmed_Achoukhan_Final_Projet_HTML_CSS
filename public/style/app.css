@@ -1,5 +1,4 @@
 nav {
-  background-color: aquamarine;
   margin-left: 13vw;
   margin-right: 13vw;
 }
@@ -37,7 +36,6 @@ nav .topNav .rightTopNav button {
   border-radius: 20px;
 }
 nav .downNav {
-  background-color: aqua;
   display: flex;
   justify-content: space-between;
   align-items: center;

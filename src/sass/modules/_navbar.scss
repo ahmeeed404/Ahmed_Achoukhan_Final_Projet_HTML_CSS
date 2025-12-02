@@ -1,5 +1,4 @@
 nav {
-    background-color: aquamarine;
     margin-left: 13vw;
     margin-right: 13vw;
 
@@ -41,7 +40,6 @@ nav {
 
 
     .downNav {
-        background-color: aqua;
         @include display(flex, space-between, center, 10px);
 
         a {
