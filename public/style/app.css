@@ -1,3 +1,69 @@
+nav {
+  background-color: aquamarine;
+  margin-left: 13vw;
+  margin-right: 13vw;
+}
+nav .topNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: none;
+  height: 6.5vh;
+}
+nav .topNav .leftTopNav,
+nav .topNav .iconMobile,
+nav .topNav .iconTime {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+nav .topNav .leftTopNav svg,
+nav .topNav .iconMobile svg,
+nav .topNav .iconTime svg {
+  color: rgb(255, 176, 59);
+}
+nav .topNav .leftTopNav p,
+nav .topNav .iconMobile p,
+nav .topNav .iconTime p {
+  color: white;
+}
+nav .topNav .rightTopNav button {
+  border: transparent;
+  width: 9vw;
+  height: 5vh;
+  background-color: rgb(255, 176, 59);
+  color: white;
+  border-radius: 20px;
+}
+nav .downNav {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+nav .downNav a {
+  text-decoration: none;
+  color: white;
+}
+nav .downNav .rightDownNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+nav .downNav .rightDownNav span {
+  color: rgb(255, 176, 59);
+}
+nav .downNav .rightDownNav a:hover {
+  color: rgb(255, 176, 59);
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /*# sourceMappingURL=app.css.map */
