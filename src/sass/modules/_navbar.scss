@@ -4,11 +4,14 @@ nav {
     z-index: 999;
     padding: 0 10vw;
     box-sizing: border-box;
-
-
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
     .topNav {
         @include display(flex, space-between, center, 0);
         height: 7vh;
+
 
         .leftTopNav {
             @include display(flex, flex-start, center, 15px);
