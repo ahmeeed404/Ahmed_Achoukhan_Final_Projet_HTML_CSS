@@ -1,66 +1,79 @@
 nav {
-    margin-left: 13vw;
-    margin-right: 13vw;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    padding: 0 10vw;
+    box-sizing: border-box;
 
 
     .topNav {
-        @include display(flex, space-between, center, none);
-        height: 6.5vh;
+        @include display(flex, space-between, center, 0);
+        height: 7vh;
 
+        .leftTopNav {
+            @include display(flex, flex-start, center, 15px);
 
-        .leftTopNav,
-        .iconMobile,
-        .iconTime {
-            @include display(flex, space-between, center, 10px);
+            .iconMobile,
+            .iconTime {
+                @include display(flex, flex-start, center, 5px);
 
+                svg {
+                    color: $orangeColor;
+                }
 
-            svg {
-                color: $orangeColor;
-            }
+                p {
+                    color: white;
+                    margin: 0;
 
-            p {
-                color: white;
+                }
             }
         }
 
         .rightTopNav {
-
             button {
-                border: transparent;
-                width: 9vw;
+                border: none;
                 height: 5vh;
+                width: 12vw;
                 background-color: $orangeColor;
                 color: white;
                 border-radius: 20px;
+
             }
         }
-
     }
 
-
-
     .downNav {
-        @include display(flex, space-between, center, 10px);
+        @include display(flex, space-between, center, 15px);
 
-        a {
-            text-decoration: none;
-            color: white;
 
-        }
+        .leftDownNav {
+            a {
+                text-decoration: none;
 
-       
+                h1 {
+                    color: white;
 
-        .rightDownNav {
-            @include display(flex, space-between, center, 20px);
-
-            span {
-                color: $orangeColor;
-            }
-
-            a:hover {
-                color: $orangeColor;
+                    margin: 0;
+                }
             }
         }
 
+        .rightDownNv {
+            @include display(flex, flex-start, center, 20px);
+
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: 500;
+
+                &:hover {
+                    color: $orangeColor;
+                }
+
+                span {
+                    color: $orangeColor;
+                }
+            }
+        }
     }
 }
