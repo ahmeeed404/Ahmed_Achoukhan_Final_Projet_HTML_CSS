@@ -1,0 +1,39 @@
+.whyUs{
+    // background-color: aquamarine;
+    margin-top: 30px;
+    .topWhy{
+        @include display(flex,center,center,5px);
+        flex-direction: column;
+        margin-bottom: 10px;
+        p{
+            border-radius:  20px;
+            background-color: rgb(255, 247, 235);
+            color: $orangeColor;
+            width: 5vw;
+            height: 5vh;
+            padding: 5px 5px;
+
+
+        }
+        h1{
+            span{
+                color: $orangeColor;
+            }
+        }
+    }
+
+    .downWhy{
+        @include display(flex,center,center,15px);
+        
+        .firstCard, .secCard, .thirdCard{
+            background-color: rgb(250, 250, 250);
+            padding: 20px;
+            height: 35vh;
+            &:hover{
+                background-color: $orangeColor;
+                transform: translateY(-5px);
+                color: white;
+            }
+        }
+    }
+}

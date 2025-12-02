@@ -12100,6 +12100,45 @@ nav .downNav .rightDownNv a span {
   background: rgb(255, 176, 59);
 }
 
+.whyUs {
+  margin-top: 30px;
+}
+.whyUs .topWhy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.whyUs .topWhy p {
+  border-radius: 20px;
+  background-color: rgb(255, 247, 235);
+  color: rgb(255, 176, 59);
+  width: 5vw;
+  height: 5vh;
+  padding: 5px 5px;
+}
+.whyUs .topWhy h1 span, .whyUs .topWhy .h1 span {
+  color: rgb(255, 176, 59);
+}
+.whyUs .downWhy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.whyUs .downWhy .firstCard, .whyUs .downWhy .secCard, .whyUs .downWhy .thirdCard {
+  background-color: rgb(250, 250, 250);
+  padding: 20px;
+  height: 35vh;
+}
+.whyUs .downWhy .firstCard:hover, .whyUs .downWhy .secCard:hover, .whyUs .downWhy .thirdCard:hover {
+  background-color: rgb(255, 176, 59);
+  transform: translateY(-5px);
+  color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
