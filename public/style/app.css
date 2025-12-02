@@ -11939,6 +11939,28 @@ nav .downNav .rightDownNv a span {
   position: relative;
   top: -50px;
 }
+.heroSec .carousel-item .contenetCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 20vw;
+  left: 25vw;
+  gap: 10px;
+  color: white;
+}
+.heroSec .carousel-item .contenetCarousel span {
+  color: rgb(255, 176, 59);
+}
+.heroSec .carousel-item .contenetCarousel button {
+  border: 1px solid rgb(255, 176, 59);
+  background-color: transparent;
+  color: white;
+  width: 8vw;
+  height: 5vh;
+  border-radius: 20px;
+}
 
 * {
   margin: 0;

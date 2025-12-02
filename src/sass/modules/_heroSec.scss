@@ -1,5 +1,32 @@
-.heroSec{
+.heroSec {
     position: relative;
     top: -50px;
-    
+
+
+
+    .carousel-item {
+        .contenetCarousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            top: 20vw;
+            left: 25vw;
+            gap: 10px;
+            color: white;
+            span{
+                color: $orangeColor;
+            }
+            button{
+                border: 1px solid $orangeColor;
+                background-color: transparent;
+                color: white;
+                width: 8vw;
+                height: 5vh;
+                border-radius: 20px;
+            }
+        }
+    }
+
 }
