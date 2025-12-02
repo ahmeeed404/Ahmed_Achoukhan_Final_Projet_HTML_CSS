@@ -1,0 +1,68 @@
+nav {
+    background-color: aquamarine;
+    margin-left: 13vw;
+    margin-right: 13vw;
+
+
+    .topNav {
+        @include display(flex, space-between, center, none);
+        height: 6.5vh;
+
+
+        .leftTopNav,
+        .iconMobile,
+        .iconTime {
+            @include display(flex, space-between, center, 10px);
+
+
+            svg {
+                color: $orangeColor;
+            }
+
+            p {
+                color: white;
+            }
+        }
+
+        .rightTopNav {
+
+            button {
+                border: transparent;
+                width: 9vw;
+                height: 5vh;
+                background-color: $orangeColor;
+                color: white;
+                border-radius: 20px;
+            }
+        }
+
+    }
+
+
+
+    .downNav {
+        background-color: aqua;
+        @include display(flex, space-between, center, 10px);
+
+        a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+       
+
+        .rightDownNav {
+            @include display(flex, space-between, center, 20px);
+
+            span {
+                color: $orangeColor;
+            }
+
+            a:hover {
+                color: $orangeColor;
+            }
+        }
+
+    }
+}
