@@ -12318,9 +12318,9 @@ nav .downNav .rightDownNv a span {
 }
 
 .events {
-  height: 100vh;
+  height: 90vh;
   background-image: url(/public/images/images/events-bg.jpg);
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 .events .slide-content {
@@ -12349,6 +12349,85 @@ nav .downNav .rightDownNv a span {
 }
 .events .carouselEvents .check-item i {
   color: rgb(255, 176, 59);
+}
+
+.bookTable .topBook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 50px;
+}
+.bookTable .topBook p {
+  border-radius: 20px;
+  background-color: rgb(255, 247, 235);
+  color: rgb(255, 176, 59);
+  width: fit-content;
+  padding: 6px 12px;
+  font-weight: 500;
+}
+.bookTable .topBook h1, .bookTable .topBook .h1 {
+  font-family: "pacifico", serif;
+}
+.bookTable .topBook h1 span, .bookTable .topBook .h1 span {
+  color: rgb(255, 176, 59);
+}
+.bookTable .downBook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: none;
+}
+.bookTable .downBook .leftDown img {
+  height: 80vh;
+}
+.bookTable .downBook .formulaire {
+  background-color: rgba(250, 250, 250, 0.514);
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.bookTable .downBook .formulaire .firstInput,
+.bookTable .downBook .formulaire .secondInput,
+.bookTable .downBook .formulaire .thirdInput {
+  gap: 20px;
+}
+.bookTable .downBook .formulaire input {
+  width: 20vw;
+  height: 6vh;
+  text-align: 25px;
+  border: 1px solid darkgray;
+}
+.bookTable .downBook .formulaire .thirdInput {
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
+}
+.bookTable .downBook .formulaire .thirdInput textarea {
+  width: 50vw;
+  height: 15vh;
+  border: 1px solid darkgray;
+}
+.bookTable .downBook .formulaire .thirdInput button {
+  width: 15vw;
+  height: 7vh;
+  border: transparent;
+  background-color: rgb(255, 176, 59);
+  border-radius: 8px;
+  color: white;
+}
+.bookTable .downBook .formulaire .thirdInput input::placeholder,
+.bookTable .downBook .formulaire .thirdInput textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
 }
 
 * {
