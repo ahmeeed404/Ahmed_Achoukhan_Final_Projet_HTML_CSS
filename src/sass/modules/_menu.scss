@@ -1,0 +1,113 @@
+.menu {
+    margin-top: 20px;
+
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        background-color: #eee;
+        padding: 10px;
+    }
+
+    /* TOP SECTION */
+    .topMenu {
+        @include display(flex, center, center, 10px);
+        flex-direction: column;
+        text-align: center;
+
+        p {
+            border-radius: 20px;
+            background-color: rgb(255, 247, 235);
+            color: $orangeColor;
+            width: fit-content;
+            padding: 6px 12px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: $fontFamily;
+        }
+    }
+
+    span {
+        color: $orangeColor;
+    }
+
+    /* MENU TABS */
+    .middleMenu {
+        margin-top: 25px;
+
+        input {
+            display: none;
+        }
+
+        ul {
+            @include display(flex, center, center, 20px);
+            list-style: none;
+        }
+
+        li label {
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'pacifico', serif;
+            transition: all 0.3s ease;
+        }
+
+        li label:hover {
+            color: $orangeColor;
+            background: rgb(255, 247, 235);
+        }
+    }
+
+    /* MENU LIST */
+    .menuList {
+        @include display(flex, center, start, 50px);
+        margin-top: 40px;
+
+        .leftMenuList,
+        .rightMenuList {
+            @include display(flex, start, start, 25px);
+            flex-direction: column;
+
+            >div {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 10px 0;
+
+                .menuText {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5px;
+                }
+            }
+        }
+    }
+
+
+   
+    .menuList div[data-cat] {
+        display: flex;
+    }
+
+    /* Hide everything except starters */
+    .middleMenu #starters:checked~.menuList div[data-cat]:not([data-cat="starters"]) {
+        display: none;
+    }
+
+    /* Hide everything except salades */
+    .middleMenu #salades:checked~.menuList div[data-cat]:not([data-cat="salades"]) {
+        display: none;
+    }
+
+    /* Hide everything except speciality */
+    .middleMenu #speciality:checked~.menuList div[data-cat]:not([data-cat="speciality"]) {
+        display: none;
+    }
+
+
+    
+
+}

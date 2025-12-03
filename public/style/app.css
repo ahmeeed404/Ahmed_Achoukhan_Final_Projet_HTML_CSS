@@ -12117,7 +12117,7 @@ nav .downNav .rightDownNv a span {
   color: rgb(255, 176, 59);
   width: 5vw;
   height: 5vh;
-  padding: 5px 5px;
+  text-align: center;
 }
 .whyUs .topWhy h1 span, .whyUs .topWhy .h1 span {
   color: rgb(255, 176, 59);
@@ -12137,6 +12137,122 @@ nav .downNav .rightDownNv a span {
   background-color: rgb(255, 176, 59);
   transform: translateY(-5px);
   color: white;
+}
+
+.menu {
+  margin-top: 20px;
+}
+.menu img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #eee;
+  padding: 10px;
+}
+.menu {
+  /* TOP SECTION */
+}
+.menu .topMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  text-align: center;
+}
+.menu .topMenu p {
+  border-radius: 20px;
+  background-color: rgb(255, 247, 235);
+  color: rgb(255, 176, 59);
+  width: fit-content;
+  padding: 6px 12px;
+  font-weight: 500;
+}
+.menu .topMenu h1, .menu .topMenu .h1 {
+  font-family: "pacifico", serif;
+}
+.menu span {
+  color: rgb(255, 176, 59);
+}
+.menu {
+  /* MENU TABS */
+}
+.menu .middleMenu {
+  margin-top: 25px;
+}
+.menu .middleMenu input {
+  display: none;
+}
+.menu .middleMenu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+.menu .middleMenu li label {
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "pacifico", serif;
+  transition: all 0.3s ease;
+}
+.menu .middleMenu li label:hover {
+  color: rgb(255, 176, 59);
+  background: rgb(255, 247, 235);
+}
+.menu {
+  /* MENU LIST */
+}
+.menu .menuList {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 50px;
+  margin-top: 40px;
+}
+.menu .menuList .leftMenuList,
+.menu .menuList .rightMenuList {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 25px;
+  flex-direction: column;
+}
+.menu .menuList .leftMenuList > div,
+.menu .menuList .rightMenuList > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+.menu .menuList .leftMenuList > div .menuText,
+.menu .menuList .rightMenuList > div .menuText {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.menu .menuList div[data-cat] {
+  display: flex;
+}
+.menu {
+  /* Hide everything except starters */
+}
+.menu .middleMenu #starters:checked ~ .menuList div[data-cat]:not([data-cat=starters]) {
+  display: none;
+}
+.menu {
+  /* Hide everything except salades */
+}
+.menu .middleMenu #salades:checked ~ .menuList div[data-cat]:not([data-cat=salades]) {
+  display: none;
+}
+.menu {
+  /* Hide everything except speciality */
+}
+.menu .middleMenu #speciality:checked ~ .menuList div[data-cat]:not([data-cat=speciality]) {
+  display: none;
 }
 
 * {
