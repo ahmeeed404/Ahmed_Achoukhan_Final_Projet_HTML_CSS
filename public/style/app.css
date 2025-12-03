@@ -12275,26 +12275,27 @@ nav .downNav .rightDownNv a span {
   gap: 10px;
 }
 .specials .downSpecials label {
-  align-items: center;
+  display: flex;
   flex-direction: column;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin-right: 5px;
 }
 .specials .downSpecials label p:hover {
   color: rgb(255, 176, 59);
 }
-.specials .downSpecials .rightDownSpecials div {
+.specials .downSpecials .rightDownSpecials .specialContenet {
   display: flex;
-}
-.specials .downSpecials .rightDownSpecials div .specialContenet {
   flex-direction: column;
 }
-.specials .downSpecials .rightDownSpecials div .specialContenet h2, .specials .downSpecials .rightDownSpecials div .specialContenet .h2 {
+.specials .downSpecials .rightDownSpecials .specialContenet h2, .specials .downSpecials .rightDownSpecials .specialContenet .h2 {
   font-family: "pacifico", serif;
 }
 .specials .downSpecials .rightDownSpecials img {
   width: 200px;
   height: 200px;
 }
-.specials .rightDownSpecials > div {
+.specials .rightDownSpecials > div[id] {
   display: none;
 }
 .specials #spec1:checked ~ .rightDownSpecials > div[id=spec1],
@@ -12306,12 +12307,6 @@ nav .downNav .rightDownNv a span {
 }
 .specials .downSpecials input[type=radio] {
   display: none;
-}
-.specials .downSpecials label {
-  cursor: pointer;
-  padding: 6px 10px;
-  margin-right: 5px;
-  transition: 0.3s;
 }
 .specials #spec1:checked + label,
 .specials #spec2:checked + label,

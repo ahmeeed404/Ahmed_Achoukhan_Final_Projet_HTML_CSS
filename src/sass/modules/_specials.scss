@@ -27,8 +27,11 @@
         @include display(flex, center, start, 10px);
 
         label {
-            align-items: center;
+            display: flex;
             flex-direction: column;
+            cursor: pointer;
+            padding: 6px 10px;
+            margin-right: 5px;
 
             p:hover {
                 color: $orangeColor;
@@ -37,17 +40,16 @@
         }
 
         .rightDownSpecials {
-            div {
-                display: flex;
 
                 .specialContenet {
+                    display: flex;
                     flex-direction: column;
 
                     h2 {
                         font-family: $fontFamily;
                     }
                 }
-            }
+           
 
             img {
                 width: 200px;
@@ -58,7 +60,7 @@
     }
 
 
-    .rightDownSpecials>div {
+    .rightDownSpecials>div[id] {
         display: none;
     }
 
@@ -76,12 +78,7 @@
     }
 
 
-    .downSpecials label {
-        cursor: pointer;
-        padding: 6px 10px;
-        margin-right: 5px;
-        transition: 0.3s;
-    }
+
 
 
     #spec1:checked+label,
