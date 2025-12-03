@@ -1,0 +1,81 @@
+.galery {
+    .topGalery {
+        @include display(flex, center, center, 10px);
+        flex-direction: column;
+        text-align: center;
+        margin-top: 50px;
+
+        p {
+            border-radius: 20px;
+            background-color: rgb(255, 247, 235);
+            color: $orangeColor;
+            width: fit-content;
+            padding: 6px 12px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: $fontFamily;
+
+            span {
+                color: $orangeColor;
+            }
+        }
+    }
+
+    .downGalery {
+        display: block;
+        gap: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .secondGalery {
+            margin-top: 10px
+        }
+
+        .firstGalery,
+        .secondGalery {
+            @include display(flex, center, center, 8px);
+            width: 100%;
+            gap: 8px;
+
+            .img-box {
+                width: 24vw;
+                height: 40vh;
+                overflow: hidden;
+                border-radius: 6px;
+            }
+
+            .img-box img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform .4s ease;
+                display: block;
+            }
+
+
+            .img-box:hover img {
+                transform: scale(1.2);
+            }
+        }
+
+    }
+
+
+
+input[type="radio"] {
+    display: none;
+}
+
+#g1:checked~.downGalery label[for="g1"] .img-box,
+#g2:checked~.downGalery label[for="g2"] .img-box,
+#g3:checked~.downGalery label[for="g3"] .img-box,
+#g4:checked~.downGalery label[for="g4"] .img-box,
+#g5:checked~.downGalery label[for="g5"] .img-box,
+#g6:checked~.downGalery label[for="g6"] .img-box,
+#g7:checked~.downGalery label[for="g7"] .img-box,
+#g8:checked~.downGalery label[for="g8"] .img-box {
+    display: block;
+}
+}
