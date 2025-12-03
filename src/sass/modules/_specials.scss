@@ -1,0 +1,93 @@
+.specials {
+    .topSpecials {
+        @include display(flex, center, center, 10px);
+        flex-direction: column;
+        text-align: center;
+
+        p {
+            border-radius: 20px;
+            background-color: rgb(255, 247, 235);
+            color: $orangeColor;
+            width: fit-content;
+            padding: 6px 12px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: $fontFamily;
+        }
+    }
+
+    span {
+        color: $orangeColor;
+
+    }
+
+    .downSpecials {
+        @include display(flex, center, start, 10px);
+
+        .leftDownSpecials {
+            align-items: center;
+            flex-direction: column;
+
+            p:hover {
+                color: $orangeColor;
+            }
+
+        }
+
+        .rightDownSpecials {
+            div {
+                display: flex;
+
+                .specialContenet {
+                    flex-direction: column;
+
+                    h2 {
+                        font-family: $fontFamily;
+                    }
+                }
+            }
+
+            img {
+                width: 200px;
+                height: 200px;
+            }
+
+        }
+    }
+
+    .leftDownSpecials input {
+        display: none;
+    }
+
+    // .rightDownSpecials>div {
+       
+        
+    // }
+
+    
+    #spec1:checked~.rightDownSpecials>div[data-spec="spec1"],
+    #spec2:checked~.rightDownSpecials>div[data-spec="spec2"],
+    #spec3:checked~.rightDownSpecials>div[data-spec="spec3"],
+    #spec4:checked~.rightDownSpecials>div[data-spec="spec4"],
+    #spec5:checked~.rightDownSpecials>div[data-spec="spec5"] {
+        display: flex;
+    }
+
+    .leftDownSpecials label {
+        cursor: pointer;
+        padding: 6px 10px;
+        transition: 0.3s;
+    }
+
+    #spec1:checked~ul li:nth-child(1) label,
+    #spec2:checked~ul li:nth-child(2) label,
+    #spec3:checked~ul li:nth-child(3) label,
+    #spec4:checked~ul li:nth-child(4) label,
+    #spec5:checked~ul li:nth-child(5) label {
+        color: $orangeColor;
+        font-weight: bold;
+    }
+
+}
