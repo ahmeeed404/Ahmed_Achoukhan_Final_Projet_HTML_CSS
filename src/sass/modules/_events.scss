@@ -1,0 +1,41 @@
+.events {
+    height: 100vh;
+    background-image: url(/public/images/images/events-bg.jpg);
+    background-size: cover;
+    background-position: center;
+
+    .slide-content {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    img {
+        width: 40vw;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .carouselEvents {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-width: 450px;
+        color: white;
+
+
+        .check-item {
+            display: flex;
+
+            gap: 8px;
+            
+
+            i {
+                color: $orangeColor;
+            }
+        }
+    }
+}

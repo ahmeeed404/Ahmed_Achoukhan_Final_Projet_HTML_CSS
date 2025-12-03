@@ -12317,6 +12317,40 @@ nav .downNav .rightDownNv a span {
   font-weight: bold;
 }
 
+.events {
+  height: 100vh;
+  background-image: url(/public/images/images/events-bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.events .slide-content {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+}
+.events img {
+  width: 40vw;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.events .carouselEvents {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 450px;
+  color: white;
+}
+.events .carouselEvents .check-item {
+  display: flex;
+  gap: 8px;
+}
+.events .carouselEvents .check-item i {
+  color: rgb(255, 176, 59);
+}
+
 * {
   margin: 0;
   padding: 0;
