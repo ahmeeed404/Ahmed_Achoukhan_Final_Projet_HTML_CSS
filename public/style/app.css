@@ -12283,11 +12283,11 @@ nav .downNav .rightDownNv a span {
   align-items: start;
   gap: 10px;
 }
-.specials .downSpecials .leftDownSpecials {
+.specials .downSpecials l {
   align-items: center;
   flex-direction: column;
 }
-.specials .downSpecials .leftDownSpecials p:hover {
+.specials .downSpecials l p:hover {
   color: rgb(255, 176, 59);
 }
 .specials .downSpecials .rightDownSpecials div {
@@ -12303,7 +12303,7 @@ nav .downNav .rightDownNv a span {
   width: 200px;
   height: 200px;
 }
-.specials .leftDownSpecials input {
+.specials .rightDownSpecials > div {
   display: none;
 }
 .specials #spec1:checked ~ .rightDownSpecials > div[data-spec=spec1],
@@ -12311,19 +12311,23 @@ nav .downNav .rightDownNv a span {
 .specials #spec3:checked ~ .rightDownSpecials > div[data-spec=spec3],
 .specials #spec4:checked ~ .rightDownSpecials > div[data-spec=spec4],
 .specials #spec5:checked ~ .rightDownSpecials > div[data-spec=spec5] {
-  display: flex;
+  display: block;
 }
-.specials .leftDownSpecials label {
+.specials .downSpecials input[type=radio] {
+  display: none;
+}
+.specials .downSpecials label {
   cursor: pointer;
   padding: 6px 10px;
+  margin-right: 5px;
   transition: 0.3s;
 }
-.specials #spec1:checked ~ ul li:nth-child(1) label,
-.specials #spec2:checked ~ ul li:nth-child(2) label,
-.specials #spec3:checked ~ ul li:nth-child(3) label,
-.specials #spec4:checked ~ ul li:nth-child(4) label,
-.specials #spec5:checked ~ ul li:nth-child(5) label {
-  color: rgb(255, 176, 59);
+.specials #spec1:checked + label,
+.specials #spec2:checked + label,
+.specials #spec3:checked + label,
+.specials #spec4:checked + label,
+.specials #spec5:checked + label {
+  color: orange;
   font-weight: bold;
 }
 

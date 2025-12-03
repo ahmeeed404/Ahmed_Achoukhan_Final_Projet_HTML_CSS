@@ -26,7 +26,7 @@
     .downSpecials {
         @include display(flex, center, start, 10px);
 
-        .leftDownSpecials {
+        label{
             align-items: center;
             flex-direction: column;
 
@@ -57,37 +57,41 @@
         }
     }
 
-    .leftDownSpecials input {
-        display: none;
-    }
+ 
+.rightDownSpecials > div {
+    display: none;
+}
 
-    // .rightDownSpecials>div {
-       
-        
-    // }
+#spec1:checked ~ .rightDownSpecials > div[data-spec="spec1"],
+#spec2:checked ~ .rightDownSpecials > div[data-spec="spec2"],
+#spec3:checked ~ .rightDownSpecials > div[data-spec="spec3"],
+#spec4:checked ~ .rightDownSpecials > div[data-spec="spec4"],
+#spec5:checked ~ .rightDownSpecials > div[data-spec="spec5"] {
+    display: block; 
+}
 
-    
-    #spec1:checked~.rightDownSpecials>div[data-spec="spec1"],
-    #spec2:checked~.rightDownSpecials>div[data-spec="spec2"],
-    #spec3:checked~.rightDownSpecials>div[data-spec="spec3"],
-    #spec4:checked~.rightDownSpecials>div[data-spec="spec4"],
-    #spec5:checked~.rightDownSpecials>div[data-spec="spec5"] {
-        display: flex;
-    }
 
-    .leftDownSpecials label {
-        cursor: pointer;
-        padding: 6px 10px;
-        transition: 0.3s;
-    }
+.downSpecials input[type="radio"] {
+    display: none;
+}
 
-    #spec1:checked~ul li:nth-child(1) label,
-    #spec2:checked~ul li:nth-child(2) label,
-    #spec3:checked~ul li:nth-child(3) label,
-    #spec4:checked~ul li:nth-child(4) label,
-    #spec5:checked~ul li:nth-child(5) label {
-        color: $orangeColor;
-        font-weight: bold;
-    }
+
+.downSpecials label {
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+
+
+#spec1:checked + label,
+#spec2:checked + label,
+#spec3:checked + label,
+#spec4:checked + label,
+#spec5:checked + label {
+    color: orange;
+    font-weight: bold;
+}
+
 
 }
