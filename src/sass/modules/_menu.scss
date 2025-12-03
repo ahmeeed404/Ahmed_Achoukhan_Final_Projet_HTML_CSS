@@ -34,32 +34,33 @@
         color: $orangeColor;
     }
 
+
+
+
     /* MENU TABS */
-    .middleMenu {
+
+    label {
         margin-top: 25px;
 
-        input {
-            display: none;
-        }
+        p {
+            @include display(flex, center, center, 10px);
+            font-family: $fontFamily;
+            flex-direction: column;
+            text-align: center;
 
-        ul {
-            @include display(flex, center, center, 20px);
-            list-style: none;
-        }
+            &:hover {
+                color: $orangeColor;
 
-        li label {
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: 'pacifico', serif;
-            transition: all 0.3s ease;
-        }
-
-        li label:hover {
-            color: $orangeColor;
-            background: rgb(255, 247, 235);
+            }
         }
     }
+
+    input {
+        display: none;
+    }
+
+
+
 
     /* MENU LIST */
     .menuList {
@@ -87,27 +88,36 @@
     }
 
 
-   
-    .menuList div[data-cat] {
-        display: flex;
-    }
 
-    /* Hide everything except starters */
-    .middleMenu #starters:checked~.menuList div[data-cat]:not([data-cat="starters"]) {
-        display: none;
-    }
 
-    /* Hide everything except salades */
-    .middleMenu #salades:checked~.menuList div[data-cat]:not([data-cat="salades"]) {
-        display: none;
-    }
 
-    /* Hide everything except speciality */
-    .middleMenu #speciality:checked~.menuList div[data-cat]:not([data-cat="speciality"]) {
+
+
+
+    .menuList div[id] {
         display: none;
     }
 
 
-    
+    #all:checked~.menuList div[id] {
+        display: block;
+    }
 
+
+    #starters:checked~.menuList div[id="starters"],
+    #salades:checked~.menuList div[id="salades"],
+    #speciality:checked~.menuList div[id="speciality"] {
+        display: block;
+    }
+
+
+    input[type="radio"] {
+        display: none;
+    }
+
+
+    .middleMenu input[type="radio"]:checked+label {
+        background-color: orange;
+        color: white;
+    }
 }
