@@ -11870,6 +11870,8 @@ nav {
   top: 0;
   width: 100%;
   z-index: 100;
+  background: rgba(113, 108, 108, 0.9);
+  backdrop-filter: blur(6px);
 }
 nav .topNav {
   display: flex;
@@ -11939,6 +11941,33 @@ nav .downNav .rightDownNv a span {
   color: rgb(255, 176, 59);
 }
 
+.scrollTop {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: #f4a12e;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+  transition: 0.3s ease;
+}
+.scrollTop i {
+  color: white;
+  font-size: 22px;
+}
+.scrollTop:hover {
+  transform: scale(1.08);
+  background: #ffb347;
+}
+
 .heroSec {
   position: relative;
   top: -50px;
@@ -11965,56 +11994,55 @@ nav .downNav .rightDownNv a span {
   height: 5vh;
   border-radius: 20px;
 }
+.heroSec .carousel-item .contenetCarousel button:hover {
+  background-color: #f4a12e;
+  color: white;
+}
 
 .aboutSec {
   background-color: rgb(255, 250, 242);
   padding: 0 10vw;
-  box-sizing: border-box;
-  height: 70vh;
   display: flex;
-  justify-content: start;
   align-items: center;
   gap: 20px;
+  height: 70vh;
 }
 .aboutSec img {
   width: 40vw;
   height: 60vh;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.aboutSec .aboutInfos h2, .aboutSec .aboutInfos .h2 {
+  font-family: "pacifico", serif;
 }
 .aboutSec .iconAbout div {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   gap: 15px;
 }
-.aboutSec .iconAbout div svg {
+.aboutSec .iconAbout div i {
   color: rgb(255, 176, 59);
   font-weight: bolder;
 }
 .aboutSec .imageWrapper {
   position: relative;
 }
-.aboutSec .imageWrapper img {
-  width: 40vw;
-  height: 60vh;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-}
-.aboutSec .openGalleryBtn {
+.aboutSec .imageWrapper .openGalleryBtn {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 12px 25px;
-  background: rgb(255, 176, 59);
-  color: #fff;
+  background: #ffb03b;
   border: none;
-  font-weight: 500;
-  border-radius: 6px;
+  padding: 14px 28px;
+  border-radius: 10px;
   cursor: pointer;
 }
-.aboutSec .openGalleryBtn:hover {
-  opacity: 0.9;
+.aboutSec .imageWrapper .openGalleryBtn i {
+  font-size: 40px;
+  color: white;
 }
 .aboutSec .modal {
   position: fixed;
@@ -12023,22 +12051,22 @@ nav .downNav .rightDownNv a span {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 900;
+  z-index: 999;
 }
 .aboutSec .modal:target {
   display: flex;
 }
-.aboutSec .modal-content {
+.aboutSec .modal .modal-content {
   background: rgb(255, 250, 242);
   padding: 20px;
   border-radius: 12px;
-  max-width: 900px;
   width: 90%;
+  max-width: 900px;
   max-height: 85vh;
   overflow: auto;
   position: relative;
 }
-.aboutSec .close {
+.aboutSec .modal .modal-content .close {
   position: absolute;
   top: 15px;
   right: 25px;
@@ -12046,58 +12074,81 @@ nav .downNav .rightDownNv a span {
   text-decoration: none;
   color: #333;
 }
-.aboutSec .carousel {
+.aboutSec .modal .modal-content .carousel {
   margin-top: 20px;
-  max-width: 850px;
   height: 450px;
   overflow: hidden;
   border-radius: 10px;
   position: relative;
 }
-.aboutSec .carousel input {
+.aboutSec .modal .modal-content .carousel input {
   display: none;
 }
-.aboutSec .carousel-inner {
-  height: 100%;
-  width: 300%;
+.aboutSec .modal .modal-content .carousel .carousel-inner {
   display: flex;
+  width: 900%;
+  height: 100%;
   transition: transform 0.6s ease;
 }
-.aboutSec .item {
+.aboutSec .modal .modal-content .carousel .carousel-inner .item {
   width: 100%;
 }
-.aboutSec .item img,
-.aboutSec .item video {
+.aboutSec .modal .modal-content .carousel .carousel-inner .item img,
+.aboutSec .modal .modal-content .carousel .carousel-inner .item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.aboutSec #slide1:checked ~ .carousel-inner {
+.aboutSec .modal .modal-content .carousel #slide1:checked ~ .carousel-inner {
   transform: translateX(0);
 }
-.aboutSec #slide2:checked ~ .carousel-inner {
-  transform: translateX(-33.333%);
+.aboutSec .modal .modal-content .carousel #slide2:checked ~ .carousel-inner {
+  transform: translateX(-100%);
 }
-.aboutSec #slide3:checked ~ .carousel-inner {
-  transform: translateX(-66.666%);
+.aboutSec .modal .modal-content .carousel #slide3:checked ~ .carousel-inner {
+  transform: translateX(-200%);
 }
-.aboutSec .nav {
-  margin-top: 10px;
+.aboutSec .modal .modal-content .carousel #slide4:checked ~ .carousel-inner {
+  transform: translateX(-300%);
+}
+.aboutSec .modal .modal-content .carousel #slide5:checked ~ .carousel-inner {
+  transform: translateX(-400%);
+}
+.aboutSec .modal .modal-content .carousel #slide6:checked ~ .carousel-inner {
+  transform: translateX(-500%);
+}
+.aboutSec .modal .modal-content .carousel #slide7:checked ~ .carousel-inner {
+  transform: translateX(-600%);
+}
+.aboutSec .modal .modal-content .carousel #slide8:checked ~ .carousel-inner {
+  transform: translateX(-700%);
+}
+.aboutSec .modal .modal-content .carousel #slide9:checked ~ .carousel-inner {
+  transform: translateX(-800%);
+}
+.aboutSec .modal .modal-content .carousel .dots {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: 12px;
 }
-.aboutSec .nav label {
+.aboutSec .modal .modal-content .carousel .dots label {
   width: 14px;
   height: 14px;
   background: #aaa;
   border-radius: 50%;
   cursor: pointer;
 }
-.aboutSec #slide1:checked ~ .nav label:nth-child(1),
-.aboutSec #slide2:checked ~ .nav label:nth-child(2),
-.aboutSec #slide3:checked ~ .nav label:nth-child(3) {
-  background: rgb(255, 176, 59);
+.aboutSec .modal .modal-content .carousel #slide1:checked ~ .dots label:nth-child(1),
+.aboutSec .modal .modal-content .carousel #slide2:checked ~ .dots label:nth-child(2),
+.aboutSec .modal .modal-content .carousel #slide3:checked ~ .dots label:nth-child(3),
+.aboutSec .modal .modal-content .carousel #slide4:checked ~ .dots label:nth-child(4),
+.aboutSec .modal .modal-content .carousel #slide5:checked ~ .dots label:nth-child(5),
+.aboutSec .modal .modal-content .carousel #slide6:checked ~ .dots label:nth-child(6),
+.aboutSec .modal .modal-content .carousel #slide7:checked ~ .dots label:nth-child(7),
+.aboutSec .modal .modal-content .carousel #slide8:checked ~ .dots label:nth-child(8),
+.aboutSec .modal .modal-content .carousel #slide9:checked ~ .dots label:nth-child(9) {
+  background: #ffb03b;
 }
 
 .whyUs {
@@ -12141,6 +12192,7 @@ nav .downNav .rightDownNv a span {
 
 .menu {
   margin-top: 20px;
+  margin-bottom: 10vw;
 }
 .menu img {
   width: 80px;
@@ -12179,6 +12231,10 @@ nav .downNav .rightDownNv a span {
   /* MENU TABS */
 }
 .menu label {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
   margin-top: 25px;
 }
 .menu label p {
@@ -12246,6 +12302,9 @@ nav .downNav .rightDownNv a span {
   color: white;
 }
 
+.specials {
+  margin-bottom: 30px;
+}
 .specials .topSpecials {
   display: flex;
   justify-content: center;
@@ -12271,15 +12330,16 @@ nav .downNav .rightDownNv a span {
 .specials .downSpecials {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   gap: 10px;
+  flex-direction: column;
 }
 .specials .downSpecials label {
   display: flex;
-  flex-direction: column;
   cursor: pointer;
   padding: 6px 10px;
   margin-right: 5px;
+  font-family: "pacifico", serif;
 }
 .specials .downSpecials label p:hover {
   color: rgb(255, 176, 59);
@@ -12413,7 +12473,7 @@ nav .downNav .rightDownNv a span {
   flex-direction: column;
 }
 .bookTable .downBook .formulaire .thirdInput textarea {
-  width: 50vw;
+  width: 61vw;
   height: 15vh;
   border: 1px solid darkgray;
 }

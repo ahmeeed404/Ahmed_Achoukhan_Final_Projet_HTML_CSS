@@ -1,8 +1,10 @@
 .specials {
+    margin-bottom: 30px;
     .topSpecials {
         @include display(flex, center, center, 10px);
         flex-direction: column;
         text-align: center;
+        
 
         p {
             border-radius: 20px;
@@ -24,14 +26,16 @@
     }
 
     .downSpecials {
-        @include display(flex, center, start, 10px);
+        @include display(flex, center, center, 10px);
+        flex-direction: column;
 
         label {
             display: flex;
-            flex-direction: column;
+            // flex-direction: column;
             cursor: pointer;
             padding: 6px 10px;
             margin-right: 5px;
+            font-family: $fontFamily;
 
             p:hover {
                 color: $orangeColor;
