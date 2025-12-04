@@ -1,109 +1,102 @@
 .specials {
     margin-bottom: 30px;
-    
 
     .topSpecials {
-        @include display(flex, center, center, 10px);
+        @include display(flex, center, center, 5px);
         flex-direction: column;
-        text-align: center;
-
+        margin-bottom: 10px;
 
         p {
             border-radius: 20px;
             background-color: rgb(255, 247, 235);
             color: $orangeColor;
-            width: fit-content;
-            padding: 6px 12px;
-            font-weight: 500;
-            &:hover{
-                background-color: $orangeColor;
-            }
+            width: 5vw;
+            height: 5vh;
+            text-align: center;
         }
 
         h1 {
             font-family: $fontFamily;
+
+            span {
+                color: $orangeColor;
+            }
         }
     }
 
-    span {
-        color: $orangeColor;
-
-    }
-
     .downSpecials {
-        // @include display(flex, center, center, 10px);
-        display: flex;
-        // flex-direction: row;
+        display: grid;
+        grid-template-columns: 200px 1fr;   
+        gap: 20px;
+        align-items: start;
 
+        
         label {
-            display: flex;
-            
-            flex-direction: column;
+            display: flex;     
+            flex-direction: column;      
+            padding: 10px 12px;
             cursor: pointer;
-            padding: 6px 10px;
-            margin-right: 5px;
+            border-left: 3px solid transparent;
             font-family: $fontFamily;
+            transition: 0.3s;
 
             p:hover {
                 color: $orangeColor;
             }
-
         }
 
+        
+        input[type="radio"] {
+            display: none;
+        }
+
+       
         .rightDownSpecials {
-            // display: flex;
-            .specialContenet {
-                display: flex;
-                flex-direction: column;
+            width: 100%;
+            position: relative;
 
-                h2 {
-                    font-family: $fontFamily;
-                }
+            > div[id] {
+                display: none;
+                animation: fade 0.3s ease-in-out;
             }
-            
-
 
             img {
-                width: 200px;
-                height: 200px;
+                width: 260px;
+                height: 260px;
+                object-fit: cover;
+                border-radius: 8px;
             }
-
         }
     }
 
-
-    .rightDownSpecials>div[id] {
-        display: none;
+    
+    #spec1:checked ~ .rightDownSpecials > div[id="spec1"],
+    #spec2:checked ~ .rightDownSpecials > div[id="spec2"],
+    #spec3:checked ~ .rightDownSpecials > div[id="spec3"],
+    #spec4:checked ~ .rightDownSpecials > div[id="spec4"],
+    #spec5:checked ~ .rightDownSpecials > div[id="spec5"] {
+        display: flex;
+        gap: 20px;
     }
 
-    #spec1:checked~.rightDownSpecials>div[id="spec1"],
-    #spec2:checked~.rightDownSpecials>div[id="spec2"],
-    #spec3:checked~.rightDownSpecials>div[id="spec3"],
-    #spec4:checked~.rightDownSpecials>div[id="spec4"],
-    #spec5:checked~.rightDownSpecials>div[id="spec5"] {
-        display: block;
-    }
-
-
-    .downSpecials input[type="radio"] {
-        display: none;
-    }
-
-
-
-
-
-    #spec1:checked+label,
-    #spec2:checked+label,
-    #spec3:checked+label,
-    #spec4:checked+label,
-    #spec5:checked+label {
-        color: orange;
+   
+    #spec1:checked + label,
+    #spec2:checked + label,
+    #spec3:checked + label,
+    #spec4:checked + label,
+    #spec5:checked + label {
+        color: $orangeColor;
         font-weight: bold;
+        border-left: 3px solid $orangeColor;
     }
-
-
 }
+
+
+@keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 
 
 //! mobile version
@@ -133,13 +126,14 @@
             width: 100%;
             align-items: start;
             display: flex;
-            
+
 
             label {
                 padding: 5px 8px;
                 margin: 5px 0;
                 text-align: center;
                 flex-direction: column;
+
                 p {
                     font-size: 14px;
                 }
@@ -150,49 +144,50 @@
                 width: 100%;
             }
 
-           
 
-                >div[id=""] {
-                    display: flex;
-                    flex-direction: column-reverse;
-                    text-align: center;
-                    gap: 15px;
-                    margin-top: 20px;
-                }
 
-                .specialContenet {
-                    h2 {
-                        font-size: 18px;
-                    }
-
-                    p {
-                        font-size: 13px;
-                        line-height: 1.4;
-                    }
-                }
-
-                img {
-                    width: 150px;
-                    height: 150px;
-                    margin: 0 auto;
-                }
-            }
-        }
-     .specials #spec1:checked~.rightDownSpecials>div[id=spec1],
-            .specials #spec2:checked~.rightDownSpecials>div[id=spec2],
-            .specials #spec3:checked~.rightDownSpecials>div[id=spec3],
-            .specials #spec4:checked~.rightDownSpecials>div[id=spec4],
-            .specials #spec5:checked~.rightDownSpecials>div[id=spec5] .rightDownSpecials {
+            >div[id=""] {
                 display: flex;
                 flex-direction: column-reverse;
-                justify-content: start;
-                align-items: center;
+                text-align: center;
+                gap: 15px;
+                margin-top: 20px;
             }
+
+            .specialContenet {
+                h2 {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 13px;
+                    line-height: 1.4;
+                }
+            }
+
+            img {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+            }
+        }
     }
+
+    .specials #spec1:checked~.rightDownSpecials>div[id=spec1],
+    .specials #spec2:checked~.rightDownSpecials>div[id=spec2],
+    .specials #spec3:checked~.rightDownSpecials>div[id=spec3],
+    .specials #spec4:checked~.rightDownSpecials>div[id=spec4],
+    .specials #spec5:checked~.rightDownSpecials>div[id=spec5] .rightDownSpecials {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: start;
+        align-items: center;
+    }
+}
 
 //! tablet version
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
 
     .specials {
 
@@ -233,7 +228,7 @@
                 width: 100%;
             }
 
-            > div[id=""] {
+            >div[id=""] {
                 display: flex;
                 flex-direction: column-reverse;
                 text-align: center;
@@ -260,12 +255,12 @@
         }
     }
 
-    
-    .specials #spec1:checked ~ .rightDownSpecials > div[id="spec1"],
-    .specials #spec2:checked ~ .rightDownSpecials > div[id="spec2"],
-    .specials #spec3:checked ~ .rightDownSpecials > div[id="spec3"],
-    .specials #spec4:checked ~ .rightDownSpecials > div[id="spec4"],
-    .specials #spec5:checked ~ .rightDownSpecials > div[id="spec5"] {
+
+    .specials #spec1:checked~.rightDownSpecials>div[id="spec1"],
+    .specials #spec2:checked~.rightDownSpecials>div[id="spec2"],
+    .specials #spec3:checked~.rightDownSpecials>div[id="spec3"],
+    .specials #spec4:checked~.rightDownSpecials>div[id="spec4"],
+    .specials #spec5:checked~.rightDownSpecials>div[id="spec5"] {
         display: flex;
         flex-direction: column-reverse;
         justify-content: flex-start;
