@@ -1,0 +1,67 @@
+footer {
+  background: #1f160e;
+  color: white;
+  padding: 60px 0 20px 0;
+  margin-top: 5vw;
+
+  .topFotter {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 40px; // ⬅ increased space here
+    border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+
+    > div {
+      display: flex;
+      gap: 15px;
+    }
+
+    i {
+      font-size: 30px;
+      color: orange;
+    }
+
+    .footertext {
+      p:first-child {
+        font-family: $fontFamily;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
+
+      p:last-child {
+        opacity: 0.9;
+        line-height: 1.5;
+      }
+    }
+
+    .media {
+        display: flex;
+        flex-direction: column;
+      gap: 15px;
+
+      a {
+        margin-right: 10px;
+      }
+
+      i {
+        font-size: 28px;
+        transition: 0.3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .downFooter {
+    text-align: center;
+    margin-top: 40px; // ⬅ more space below topFotter
+    padding-top: 20px;
+    font-size: 15px;
+    opacity: 0.8;
+  }
+}

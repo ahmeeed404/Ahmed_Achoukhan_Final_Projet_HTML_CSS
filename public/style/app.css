@@ -12610,7 +12610,7 @@ nav .downNav .rightDownNv a span {
 }
 
 .contact {
-  height: 70vh;
+  height: 100%;
 }
 .contact .topContact {
   display: flex;
@@ -12719,6 +12719,62 @@ nav .downNav .rightDownNv a span {
   display: flex;
   flex-direction: column;
   gap: 25px;
+}
+
+footer {
+  background: #1f160e;
+  color: white;
+  padding: 60px 0 20px 0;
+  margin-top: 5vw;
+}
+footer .topFotter {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+}
+footer .topFotter > div {
+  display: flex;
+  gap: 15px;
+}
+footer .topFotter i {
+  font-size: 30px;
+  color: orange;
+}
+footer .topFotter .footertext p:first-child {
+  font-family: "pacifico", serif;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+footer .topFotter .footertext p:last-child {
+  opacity: 0.9;
+  line-height: 1.5;
+}
+footer .topFotter .media {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+footer .topFotter .media a {
+  margin-right: 10px;
+}
+footer .topFotter .media i {
+  font-size: 28px;
+  transition: 0.3s;
+}
+footer .topFotter .media i:hover {
+  transform: scale(1.1);
+}
+footer .downFooter {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 15px;
+  opacity: 0.8;
 }
 
 * {

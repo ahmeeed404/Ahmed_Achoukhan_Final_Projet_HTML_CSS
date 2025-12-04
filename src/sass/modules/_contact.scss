@@ -1,5 +1,5 @@
 .contact {
-    height: 70vh;
+    height: 100%;
 
     .topContact {
         @include display(flex, center, center, 10px);
@@ -40,7 +40,6 @@
             width: 35%;
             padding: 30px;
             background: #ffffff54;
-
             border-radius: 8px;
             box-shadow: 5px 5px 5px rgb(120, 120, 120);
             height: 60vh;
