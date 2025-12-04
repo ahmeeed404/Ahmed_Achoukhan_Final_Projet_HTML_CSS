@@ -96,3 +96,74 @@
 
 
 }
+@media (max-width: 425px) {
+
+    .specials {
+
+        .topSpecials {
+            p {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+
+            h1 {
+                font-size: 22px;
+                line-height: 1.3;
+
+                span {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        /* DOWN SPECIALS */
+        .downSpecials {
+            width: 100%;
+            align-items: center;
+
+            /* LABELS (TABS) */
+            label {
+                padding: 5px 8px;
+                margin: 5px 0;
+                text-align: center;
+
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            /* MAKE LABELS STACK VERTICALLY */
+            label p {
+                width: 100%;
+            }
+
+            /* SPECIAL CONTENT AREA */
+            .rightDownSpecials {
+
+                > div {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 15px;
+                    margin-top: 20px;
+                }
+
+                .specialContenet {
+                    h2 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                        line-height: 1.4;
+                    }
+                }
+
+                img {
+                    width: 150px;
+                    height: 150px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

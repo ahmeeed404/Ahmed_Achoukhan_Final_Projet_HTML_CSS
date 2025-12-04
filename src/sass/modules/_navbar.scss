@@ -15,7 +15,7 @@ nav {
     .topNav {
         @include display(flex, space-between, center, 0);
         height: 7vh;
-        
+
 
         .leftTopNav {
             @include display(flex, flex-start, center, 15px);
@@ -44,10 +44,10 @@ nav {
                 background-color: $orangeColor;
                 color: white;
                 border-radius: 20px;
-               
+
 
             }
-           
+
         }
     }
 
@@ -86,35 +86,118 @@ nav {
         }
     }
 
-    
 
-
-
-}.scrollTop {
-        position: fixed;
-        right: 30px;
-        bottom: 30px;
-        width: 50px;
-        height: 50px;
-        border: none;
-        background: #f4a12e;
-        border-radius: 10px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        z-index: 2000;
-        transition: 0.3s ease;
-
-        i {
-            color: white;
-            font-size: 22px;
-        }
-
-        &:hover {
-            transform: scale(1.08);
-            background: #ffb347;
-        }
+    .close,
+    #check {
+        display: none;
     }
+
+    .open {
+        position: absolute;
+        right: 5%;
+        font-size: x-large;
+        display: none;
+    }
+
+}
+
+.scrollTop {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: #f4a12e;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+    transition: 0.3s ease;
+
+    i {
+        color: white;
+        font-size: 22px;
+    }
+
+    &:hover {
+        transform: scale(1.08);
+        background: #ffb347;
+    }
+}
+
+
+@media (max-width: 425px) {
+
+    
+    nav {
+        height: auto;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    
+    nav .topNav .leftTopNav {
+        display: none;
+    }
+
+    
+    nav .downNav .rightDownNv {
+        display: none;
+    }
+
+    
+    #check:checked ~ .rightDownNv {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background: #f5eded;
+        color: black;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 25px 0;
+        text-align: center;
+        z-index: 100;
+    }
+
+    nav .topNav .rightTopNav button {
+        width: 35vw;
+        height: 6vh;
+        margin-left: auto;
+        display: block;
+    }
+
+    .open {
+        display: block !important;
+    }
+
+    .close {
+        display: none;
+    }
+
+    #check:checked ~ .open {
+        display: none !important;
+    }
+
+    #check:checked ~ .close {
+        display: block;
+    }
+
+    .open label,
+    .close label {
+        font-size: 32px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;       
+        top: -15px;
+        font-weight: bolder;
+        z-index: 1000;
+        display: block;     
+    }
+}

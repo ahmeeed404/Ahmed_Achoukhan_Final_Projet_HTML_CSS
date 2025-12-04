@@ -126,3 +126,73 @@
         color: white;
     }
 }
+
+
+@media (max-width: 425px) {
+
+    .menu {
+
+        
+        .topMenu {
+            p {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+
+            h1 {
+                font-size: 22px;
+                
+
+                span {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        
+        label {
+            margin-top: 15px;
+
+            p {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+        }
+
+        .menuList {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 30px;
+
+            .leftMenuList,
+            .rightMenuList {
+                width: 100%;
+                gap: 20px;
+
+                > div {
+                    width: 90%;
+                    margin: auto;
+                    gap: 15px;
+                    padding: 12px 0;
+
+                    img {
+                        width: 60px;
+                        height: 60px;
+                    }
+
+                    .menuText {
+                        p:first-child {
+                            font-size: 14px;
+                        }
+
+                        p:last-child {
+                            font-size: 12px;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -11940,6 +11940,16 @@ nav .downNav .rightDownNv a:hover {
 nav .downNav .rightDownNv a span {
   color: rgb(255, 176, 59);
 }
+nav .close,
+nav #check {
+  display: none;
+}
+nav .open {
+  position: absolute;
+  right: 5%;
+  font-size: x-large;
+  display: none;
+}
 
 .scrollTop {
   position: fixed;
@@ -11968,6 +11978,62 @@ nav .downNav .rightDownNv a span {
   background: #ffb347;
 }
 
+@media (max-width: 425px) {
+  nav {
+    height: auto;
+    padding: 10px 0;
+    position: relative;
+  }
+  nav .topNav .leftTopNav {
+    display: none;
+  }
+  nav .downNav .rightDownNv {
+    display: none;
+  }
+  #check:checked ~ .rightDownNv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #f5eded;
+    color: black;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    z-index: 100;
+  }
+  nav .topNav .rightTopNav button {
+    width: 35vw;
+    height: 6vh;
+    margin-left: auto;
+    display: block;
+  }
+  .open {
+    display: block !important;
+  }
+  .close {
+    display: none;
+  }
+  #check:checked ~ .open {
+    display: none !important;
+  }
+  #check:checked ~ .close {
+    display: block;
+  }
+  .open label,
+  .close label {
+    font-size: 32px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    font-weight: bolder;
+    z-index: 1000;
+    display: block;
+  }
+}
 .heroSec {
   position: relative;
   top: -50px;
@@ -11999,6 +12065,45 @@ nav .downNav .rightDownNv a span {
   color: white;
 }
 
+@media (max-width: 425px) {
+  .heroSec {
+    top: 0;
+    height: 90vh;
+    margin-bottom: 80vw;
+  }
+  .heroSec .carousel-item .contenetCarousel {
+    top: 35vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    gap: 15px;
+  }
+  .heroSec .carousel-item .contenetCarousel h1, .heroSec .carousel-item .contenetCarousel .h1 {
+    font-size: 7vw;
+    /* bigger readable title */
+    line-height: 1.2;
+  }
+  .heroSec .carousel-item .contenetCarousel p {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin: 0 10px;
+  }
+  .heroSec .carousel-item .contenetCarousel .carouselBttn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+  }
+  .heroSec .carousel-item .contenetCarousel .carouselBttn button {
+    width: 50vw;
+    /* larger buttons */
+    height: 6.5vh;
+    border-radius: 25px;
+    font-size: 4vw;
+  }
+}
 .aboutSec {
   background-color: rgb(255, 250, 242);
   padding: 0 10vw;
@@ -12151,6 +12256,67 @@ nav .downNav .rightDownNv a span {
   background: #ffb03b;
 }
 
+@media (max-width: 425px) {
+  .aboutSec {
+    padding: 20px 5vw;
+    flex-direction: column;
+    height: auto;
+    gap: 25px;
+  }
+  .aboutSec img {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .aboutSec .imageWrapper {
+    width: 100%;
+    position: relative;
+  }
+  .aboutSec .imageWrapper .openGalleryBtn {
+    padding: 10px 20px;
+  }
+  .aboutSec .imageWrapper .openGalleryBtn i {
+    font-size: 30px;
+  }
+  .aboutSec .rightAbout {
+    width: 100%;
+  }
+  .aboutSec .rightAbout .aboutInfos h2, .aboutSec .rightAbout .aboutInfos .h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  .aboutSec .rightAbout .aboutInfos p {
+    font-size: 14px;
+  }
+  .aboutSec .rightAbout .aboutInfos .iconAbout div {
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .aboutSec .rightAbout .aboutInfos .iconAbout div i {
+    font-size: 18px;
+  }
+  .aboutSec .rightAbout .aboutInfos .iconAbout div p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .aboutSec .modal .modal-content {
+    width: 95%;
+    max-height: 80vh;
+    padding: 15px;
+  }
+  .aboutSec .modal .modal-content .carousel {
+    height: 250px;
+  }
+  .aboutSec .modal .modal-content .carousel .carousel-inner {
+    height: 250px;
+  }
+  .aboutSec .modal .modal-content .close {
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+  }
+}
 .whyUs {
   margin-top: 30px;
 }
@@ -12190,6 +12356,52 @@ nav .downNav .rightDownNv a span {
   color: white;
 }
 
+@media (max-width: 425px) {
+  .whyUs {
+    margin-top: 15vw;
+  }
+  .whyUs .topWhy {
+    gap: 5px;
+  }
+  .whyUs .topWhy p {
+    width: 35vw;
+    height: 5vh;
+    font-size: 12px;
+  }
+  .whyUs .topWhy h1, .whyUs .topWhy .h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .whyUs .topWhy h1 span, .whyUs .topWhy .h1 span {
+    font-size: 20px;
+  }
+  .whyUs .downWhy {
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    margin: auto;
+  }
+  .whyUs .downWhy .firstCard,
+  .whyUs .downWhy .secCard,
+  .whyUs .downWhy .thirdCard {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    justify-content: start;
+  }
+  .whyUs .downWhy .firstCard h2, .whyUs .downWhy .firstCard .h2,
+  .whyUs .downWhy .secCard h2,
+  .whyUs .downWhy .secCard .h2,
+  .whyUs .downWhy .thirdCard h2,
+  .whyUs .downWhy .thirdCard .h2 {
+    font-size: 22px;
+  }
+  .whyUs .downWhy .firstCard p,
+  .whyUs .downWhy .secCard p,
+  .whyUs .downWhy .thirdCard p {
+    font-size: 14px;
+  }
+}
 .menu {
   margin-top: 20px;
   margin-bottom: 10vw;
@@ -12302,6 +12514,56 @@ nav .downNav .rightDownNv a span {
   color: white;
 }
 
+@media (max-width: 425px) {
+  .menu .topMenu p {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .menu .topMenu h1, .menu .topMenu .h1 {
+    font-size: 22px;
+  }
+  .menu .topMenu h1 span, .menu .topMenu .h1 span {
+    font-size: 22px;
+  }
+  .menu label {
+    margin-top: 15px;
+  }
+  .menu label p {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .menu .menuList {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .menu .menuList .leftMenuList,
+  .menu .menuList .rightMenuList {
+    width: 100%;
+    gap: 20px;
+  }
+  .menu .menuList .leftMenuList > div,
+  .menu .menuList .rightMenuList > div {
+    width: 90%;
+    margin: auto;
+    gap: 15px;
+    padding: 12px 0;
+  }
+  .menu .menuList .leftMenuList > div img,
+  .menu .menuList .rightMenuList > div img {
+    width: 60px;
+    height: 60px;
+  }
+  .menu .menuList .leftMenuList > div .menuText p:first-child,
+  .menu .menuList .rightMenuList > div .menuText p:first-child {
+    font-size: 14px;
+  }
+  .menu .menuList .leftMenuList > div .menuText p:last-child,
+  .menu .menuList .rightMenuList > div .menuText p:last-child {
+    font-size: 12px;
+  }
+}
 .specials {
   margin-bottom: 30px;
 }
@@ -12377,6 +12639,62 @@ nav .downNav .rightDownNv a span {
   font-weight: bold;
 }
 
+@media (max-width: 425px) {
+  .specials .topSpecials p {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .specials .topSpecials h1, .specials .topSpecials .h1 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  .specials .topSpecials h1 span, .specials .topSpecials .h1 span {
+    font-size: 22px;
+  }
+  .specials {
+    /* DOWN SPECIALS */
+  }
+  .specials .downSpecials {
+    width: 100%;
+    align-items: center;
+    /* LABELS (TABS) */
+  }
+  .specials .downSpecials label {
+    padding: 5px 8px;
+    margin: 5px 0;
+    text-align: center;
+  }
+  .specials .downSpecials label p {
+    font-size: 14px;
+  }
+  .specials .downSpecials {
+    /* MAKE LABELS STACK VERTICALLY */
+  }
+  .specials .downSpecials label p {
+    width: 100%;
+  }
+  .specials .downSpecials {
+    /* SPECIAL CONTENT AREA */
+  }
+  .specials .downSpecials .rightDownSpecials > div {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  .specials .downSpecials .rightDownSpecials .specialContenet h2, .specials .downSpecials .rightDownSpecials .specialContenet .h2 {
+    font-size: 18px;
+  }
+  .specials .downSpecials .rightDownSpecials .specialContenet p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .specials .downSpecials .rightDownSpecials img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+}
 .events {
   height: 90vh;
   background-image: url(/public/images/images/events-bg.jpg);
@@ -12411,6 +12729,34 @@ nav .downNav .rightDownNv a span {
   color: rgb(255, 176, 59);
 }
 
+@media (max-width: 425px) {
+  .events {
+    height: auto;
+    background-size: cover;
+    padding: 20px 0;
+  }
+  .events .slide-content {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    min-height: auto;
+  }
+  .events img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .events .carouselEvents {
+    max-width: 100%;
+    text-align: center;
+    gap: 6px;
+  }
+  .events .carouselEvents .check-item {
+    justify-content: center;
+    text-align: left;
+  }
+}
 .bookTable .topBook {
   display: flex;
   justify-content: center;
@@ -12490,6 +12836,45 @@ nav .downNav .rightDownNv a span {
   color: rgba(0, 0, 0, 0.4);
 }
 
+@media (max-width: 425px) {
+  .bookTable .downBook {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  .bookTable .downBook .leftDown img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .bookTable .formulaire {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .bookTable .formulaire input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 45px;
+  }
+  .bookTable .formulaire textarea {
+    width: 100%;
+    height: 120px;
+  }
+  .bookTable .formulaire button {
+    width: 100%;
+    height: 50px;
+  }
+  .bookTable .formulaire .firstInput,
+  .bookTable .formulaire .secondInput,
+  .bookTable .formulaire .thirdInput {
+    flex-direction: column;
+    width: 100%;
+  }
+}
 .galery .topGalery {
   display: flex;
   justify-content: center;
@@ -12564,6 +12949,23 @@ nav .downNav .rightDownNv a span {
   display: block;
 }
 
+@media (max-width: 425px) {
+  .galery .downGalery {
+    padding: 10px;
+  }
+  .galery .firstGalery,
+  .galery .secondGalery {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .galery .img-box {
+    width: 100% !important;
+    height: 200px !important;
+  }
+  .galery .img-box img {
+    object-fit: cover;
+  }
+}
 .chefs .topChefs h1, .chefs .topChefs .h1 {
   font-family: "pacifico", serif;
 }
@@ -12781,6 +13183,42 @@ nav .downNav .rightDownNv a span {
   gap: 25px;
 }
 
+@media (max-width: 425px) {
+  .contact .formul {
+    flex-direction: column;
+    padding-left: 0;
+    gap: 25px;
+  }
+  .contact .leftFormul {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  .contact .rightFormul {
+    width: 90%;
+    gap: 20px;
+  }
+  .contact .rightFormul input {
+    width: 100% !important;
+    height: 50px;
+  }
+  .contact .rightFormul textarea {
+    width: 100% !important;
+    height: 150px;
+  }
+  .contact .rightFormul button {
+    width: 60%;
+    height: 50px;
+    align-self: center;
+  }
+  .contact .firstFormul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .contact .secFormul {
+    gap: 20px;
+  }
+}
 footer {
   background: #1f160e;
   color: white;
@@ -12837,6 +13275,33 @@ footer .downFooter {
   opacity: 0.8;
 }
 
+@media (max-width: 425px) {
+  footer .topFotter {
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+  }
+  footer .topFotter > div {
+    width: 100%;
+    gap: 12px;
+  }
+  footer .topFotter i {
+    font-size: 26px;
+  }
+  footer .media {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+  footer .media a i {
+    font-size: 24px;
+  }
+  footer .downFooter {
+    margin-top: 25px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 15px;
+  }
+}
 * {
   margin: 0;
   padding: 0;

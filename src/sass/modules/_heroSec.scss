@@ -37,3 +37,55 @@
     }
 
 }
+
+
+@media (max-width: 425px) {
+
+    .heroSec {
+        top: 0;
+        height: 90vh;
+        margin-bottom: 80vw;
+
+        .carousel-item {
+
+            .contenetCarousel {
+                top: 35vw;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                text-align: center;
+                gap: 15px;
+
+               
+
+                h1 {
+                    font-size: 7vw;
+                    /* bigger readable title */
+                    line-height: 1.2;
+                }
+
+                p {
+                    font-size: 4vw;
+                    line-height: 1.4;
+                    margin: 0 10px;
+                }
+
+                .carouselBttn {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    width: 100%;
+                    align-items: center;
+
+                    button {
+                        width: 50vw;
+                        /* larger buttons */
+                        height: 6.5vh;
+                        border-radius: 25px;
+                        font-size: 4vw;
+                    }
+                }
+            }
+        }
+    }
+}

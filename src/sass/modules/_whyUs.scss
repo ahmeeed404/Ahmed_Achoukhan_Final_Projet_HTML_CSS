@@ -37,3 +37,51 @@
         }
     }
 }
+@media (max-width: 425px) {
+    .whyUs {
+        margin-top: 15vw;
+        .topWhy {
+            gap: 5px;
+
+            p {
+                width: 35vw;
+                height: 5vh;
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 20px;
+                text-align: center;
+
+                span {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .downWhy {
+            flex-direction: column;
+            gap: 15px;
+            width: 90%;
+            margin: auto;
+
+            .firstCard,
+            .secCard,
+            .thirdCard {
+                width: 100%;
+                height: auto;
+                padding: 15px;
+                justify-content: start;
+
+                h2 {
+                    font-size: 22px;
+                }
+
+                p {
+                    font-size: 14px;
+                    
+                }
+            }
+        }
+    }
+}

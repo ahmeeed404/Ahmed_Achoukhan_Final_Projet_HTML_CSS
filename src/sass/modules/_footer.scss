@@ -65,3 +65,37 @@ footer {
     opacity: 0.8;
   }
 }
+@media (max-width: 425px) {
+
+    footer .topFotter {
+        flex-direction: column;
+        gap: 25px;
+        align-items: flex-start;
+    }
+
+    footer .topFotter > div {
+        width: 100%;
+        gap: 12px;
+    }
+
+    footer .topFotter i {
+        font-size: 26px;
+    }
+
+    footer .media {
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    footer .media a i {
+        font-size: 24px;
+    }
+
+    footer .downFooter {
+        margin-top: 25px;
+        font-size: 14px;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+}

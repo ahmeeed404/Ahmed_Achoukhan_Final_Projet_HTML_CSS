@@ -132,3 +132,48 @@
 
 
 }
+@media (max-width: 425px) {
+
+    .contact .formul {
+        flex-direction: column;
+        padding-left: 0;
+        gap: 25px;
+    }
+
+    .contact .leftFormul {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .contact .rightFormul {
+        width: 90%;
+        gap: 20px;
+    }
+
+    .contact .rightFormul input {
+        width: 100% !important;
+        height: 50px;
+    }
+
+    .contact .rightFormul textarea {
+        width: 100% !important;
+        height: 150px;
+    }
+
+    .contact .rightFormul button {
+        width: 60%;
+        height: 50px;
+        align-self: center;
+    }
+
+    .contact .firstFormul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact .secFormul {
+        gap: 20px;
+    }
+
+}

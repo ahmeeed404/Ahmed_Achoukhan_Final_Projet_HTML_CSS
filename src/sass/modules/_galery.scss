@@ -79,3 +79,25 @@ input[type="radio"] {
     display: block;
 }
 }
+@media (max-width: 425px) {
+
+    .galery .downGalery {
+        padding: 10px;
+    }
+
+    .galery .firstGalery,
+    .galery .secondGalery {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .galery .img-box {
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    .galery .img-box img {
+        object-fit: cover;
+    }
+
+}
