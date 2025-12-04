@@ -12504,6 +12504,25 @@ nav .downNav .rightDownNv a span {
   display: block;
 }
 
+.chefs .topChefs h1, .chefs .topChefs .h1 {
+  font-family: "pacifico", serif;
+}
+.chefs .topChefs p {
+  border-radius: 20px;
+  background-color: rgb(255, 247, 235);
+  color: rgb(255, 176, 59);
+}
+.chefs .cards .firstCard, .chefs .cards .secCard, .chefs .cards .thirdcard {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  position: relative;
+}
+.chefs .cards .firstCard .card-body, .chefs .cards .secCard .card-body, .chefs .cards .thirdcard .card-body {
+  position: absolute;
+  top: -20vw;
+}
+
 * {
   margin: 0;
   padding: 0;

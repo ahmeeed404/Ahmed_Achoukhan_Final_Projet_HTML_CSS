@@ -1,0 +1,27 @@
+.chefs {
+    .topChefs {
+        h1 {
+            font-family: $fontFamily;
+        }
+
+        p {
+            border-radius: 20px;
+            background-color: rgb(255, 247, 235);
+            color: $orangeColor;
+        }
+    }
+    .cards{
+        
+        .firstCard, .secCard, .thirdcard{
+            display: flex;
+            flex-direction: column;
+            width: 20vw;
+        position: relative;
+       .card-body{
+        position: absolute;
+        top: -20vw;
+       }
+      
+    }
+}
+}
