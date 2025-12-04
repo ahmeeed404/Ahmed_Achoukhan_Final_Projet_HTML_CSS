@@ -1,0 +1,135 @@
+.contact {
+    height: 70vh;
+
+    .topContact {
+        @include display(flex, center, center, 10px);
+        flex-direction: column;
+        text-align: center;
+        margin-top: 50px;
+
+        p {
+            border-radius: 20px;
+            background-color: rgb(255, 247, 235);
+            color: $orangeColor;
+            width: fit-content;
+            padding: 6px 12px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: $fontFamily;
+        }
+    }
+
+    span {
+        color: $orangeColor;
+
+    }
+
+    .map {
+        height: 400px;
+        margin-top: 40px;
+    }
+
+    .formul {
+        padding-left: 5vw;
+        margin-top: 20px;
+        @include display(flex, center, center, 20px);
+
+        .leftFormul {
+            width: 35%;
+            padding: 30px;
+            background: #ffffff54;
+
+            border-radius: 8px;
+            box-shadow: 5px 5px 5px rgb(120, 120, 120);
+            height: 60vh;
+            border-radius: 6px;
+
+            .formulText {
+                h2 {
+                    font-family: $fontFamily;
+                }
+
+                p {
+                    color: rgb(159, 157, 157);
+                }
+            }
+
+            .formulIcon {
+                display: flex;
+                flex-direction: column;
+
+
+                >div {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 15px;
+                }
+
+                i {
+                    color: $orangeColor;
+                    font-size: 26px;
+                    margin-top: 3px;
+                }
+
+                p:first-child {
+                    font-size: 17px;
+
+                    color: rgb(14, 13, 13);
+                    margin-bottom: 5px;
+                }
+
+                p:last-child {
+                    color: rgb(159, 157, 157);
+                }
+
+
+            }
+
+        }
+
+        .rightFormul {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            input {
+                width: 20vw;
+                height: 6vh;
+                text-align: 25px;
+                border: 1px solid darkgray;
+            }
+
+            textarea {
+                width: 42vw;
+                height: 15vh;
+                border: 1px solid darkgray;
+            }
+
+            button {
+                width: 15vw;
+                height: 7vh;
+                border: transparent;
+                background-color: rgb(255, 176, 59);
+                border-radius: 8px;
+                color: white;
+            }
+
+            .firstFormul {
+                display: flex;
+                gap: 20px;
+            }
+            .secFormul{
+                input{
+                    width: 42vw;
+                }
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+    }
+
+
+
+}
