@@ -11870,8 +11870,9 @@ nav {
   top: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(113, 108, 108, 0.9);
+  background-color: rgba(128, 128, 128, 0.5);
   backdrop-filter: blur(6px);
+  transition: background 0.3s ease;
 }
 nav .topNav {
   display: flex;
@@ -11921,6 +11922,7 @@ nav .downNav .leftDownNav a {
 }
 nav .downNav .leftDownNav a h1, nav .downNav .leftDownNav a .h1 {
   color: white;
+  font-family: "pacifico", serif;
   margin: 0;
 }
 nav .downNav .rightDownNv {
@@ -11990,12 +11992,14 @@ nav .open {
   nav .downNav .rightDownNv {
     display: none;
   }
+  nav .downNav .rightDownNv a {
+    color: black;
+  }
   #check:checked ~ .rightDownNv {
     display: flex;
     flex-direction: column;
     gap: 20px;
     background: #f5eded;
-    color: black;
     position: absolute;
     top: 70px;
     left: 0;
@@ -12034,20 +12038,97 @@ nav .open {
     display: block;
   }
 }
+@media (max-width: 768px) {
+  nav {
+    height: auto;
+    padding: 15px 0;
+    position: relative;
+  }
+  nav .topNav .leftTopNav {
+    display: none;
+  }
+  nav .downNav .rightDownNv {
+    display: none;
+  }
+  nav .downNav .rightDownNv a {
+    color: black;
+  }
+  #check:checked ~ .rightDownNv {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: #f5eded;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    z-index: 100;
+  }
+  nav .topNav .rightTopNav button {
+    width: 25vw;
+    height: 6vh;
+    margin-left: auto;
+    display: block;
+  }
+  .open {
+    display: block !important;
+  }
+  .close {
+    display: none;
+  }
+  #check:checked ~ .open {
+    display: none !important;
+  }
+  #check:checked ~ .close {
+    display: block;
+  }
+  .open label,
+  .close label {
+    font-size: 34px;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: -15px;
+    font-weight: bolder;
+    z-index: 1000;
+    display: block;
+  }
+}
 .heroSec {
   position: relative;
   top: -50px;
 }
+.heroSec .carousel-item {
+  position: relative;
+  filter: none !important;
+}
+.heroSec .carousel-item img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.heroSec .carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
 .heroSec .carousel-item .contenetCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   position: absolute;
   top: 20vw;
   left: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
   color: white;
+  z-index: 2;
+}
+.heroSec .carousel-item .contenetCarousel h1, .heroSec .carousel-item .contenetCarousel .h1 {
+  font-family: "pacifico", serif;
 }
 .heroSec .carousel-item .contenetCarousel span {
   color: rgb(255, 176, 59);
@@ -12102,6 +12183,24 @@ nav .open {
     height: 6.5vh;
     border-radius: 25px;
     font-size: 4vw;
+  }
+}
+@media (max-width: 768px) {
+  .heroSec {
+    height: 70vh;
+    margin-bottom: 40vw;
+  }
+  .heroSec .carousel-item .contenetCarousel {
+    top: 20vw;
+    width: 61%;
+  }
+  .heroSec .carousel-item .contenetCarousel h1, .heroSec .carousel-item .contenetCarousel .h1 {
+    font-size: 4vw;
+  }
+  .heroSec .carousel-item .contenetCarousel .carouselBttn button {
+    width: 30vw;
+    height: 6vh;
+    font-size: 2.5vw;
   }
 }
 .aboutSec {
@@ -12317,6 +12416,36 @@ nav .open {
     font-size: 22px;
   }
 }
+@media (max-width: 768px) {
+  .aboutSec {
+    padding: 40px 5vw;
+    gap: 30px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .aboutSec img {
+    width: 100%;
+    height: 45vh;
+  }
+  .aboutSec .rightAbout .aboutInfos h2, .aboutSec .rightAbout .aboutInfos .h2 {
+    font-size: 28px;
+  }
+  .aboutSec .rightAbout .aboutInfos p {
+    font-size: 16px;
+  }
+  .aboutSec .rightAbout .aboutInfos .iconAbout div i {
+    font-size: 22px;
+  }
+  .aboutSec .modal .modal-content {
+    width: 85%;
+    max-height: 85vh;
+  }
+  .aboutSec .modal .modal-content .carousel,
+  .aboutSec .modal .modal-content .carousel-inner {
+    height: 350px;
+  }
+}
 .whyUs {
   margin-top: 30px;
 }
@@ -12336,6 +12465,9 @@ nav .open {
   height: 5vh;
   text-align: center;
 }
+.whyUs .topWhy h1, .whyUs .topWhy .h1 {
+  font-family: "pacifico", serif;
+}
 .whyUs .topWhy h1 span, .whyUs .topWhy .h1 span {
   color: rgb(255, 176, 59);
 }
@@ -12345,12 +12477,16 @@ nav .open {
   align-items: center;
   gap: 15px;
 }
-.whyUs .downWhy .firstCard, .whyUs .downWhy .secCard, .whyUs .downWhy .thirdCard {
+.whyUs .downWhy .firstCard,
+.whyUs .downWhy .secCard,
+.whyUs .downWhy .thirdCard {
   background-color: rgb(250, 250, 250);
   padding: 20px;
   height: 35vh;
 }
-.whyUs .downWhy .firstCard:hover, .whyUs .downWhy .secCard:hover, .whyUs .downWhy .thirdCard:hover {
+.whyUs .downWhy .firstCard:hover,
+.whyUs .downWhy .secCard:hover,
+.whyUs .downWhy .thirdCard:hover {
   background-color: rgb(255, 176, 59);
   transform: translateY(-5px);
   color: white;
@@ -12402,6 +12538,51 @@ nav .open {
     font-size: 14px;
   }
 }
+@media (max-width: 768px) {
+  .whyUs {
+    margin-top: 10vw;
+  }
+  .whyUs .topWhy {
+    gap: 8px;
+  }
+  .whyUs .topWhy p {
+    width: 28vw;
+    height: 4.5vh;
+    font-size: 14px;
+  }
+  .whyUs .topWhy h1, .whyUs .topWhy .h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  .whyUs .topWhy h1 span, .whyUs .topWhy .h1 span {
+    font-size: 28px;
+  }
+  .whyUs .downWhy {
+    flex-direction: column;
+    gap: 20px;
+    width: 85%;
+    margin: auto;
+  }
+  .whyUs .downWhy .firstCard,
+  .whyUs .downWhy .secCard,
+  .whyUs .downWhy .thirdCard {
+    width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+  .whyUs .downWhy .firstCard h2, .whyUs .downWhy .firstCard .h2,
+  .whyUs .downWhy .secCard h2,
+  .whyUs .downWhy .secCard .h2,
+  .whyUs .downWhy .thirdCard h2,
+  .whyUs .downWhy .thirdCard .h2 {
+    font-size: 26px;
+  }
+  .whyUs .downWhy .firstCard p,
+  .whyUs .downWhy .secCard p,
+  .whyUs .downWhy .thirdCard p {
+    font-size: 16px;
+  }
+}
 .menu {
   margin-top: 20px;
   margin-bottom: 10vw;
@@ -12413,9 +12594,6 @@ nav .open {
   object-fit: cover;
   background-color: #eee;
   padding: 10px;
-}
-.menu {
-  /* TOP SECTION */
 }
 .menu .topMenu {
   display: flex;
@@ -12439,13 +12617,9 @@ nav .open {
 .menu span {
   color: rgb(255, 176, 59);
 }
-.menu {
-  /* MENU TABS */
-}
 .menu label {
   display: flex;
   justify-content: center;
-  flex-direction: row;
   text-align: center;
   margin-top: 25px;
 }
@@ -12464,9 +12638,6 @@ nav .open {
 .menu input {
   display: none;
 }
-.menu {
-  /* MENU LIST */
-}
 .menu .menuList {
   display: flex;
   justify-content: center;
@@ -12477,8 +12648,8 @@ nav .open {
 .menu .menuList .leftMenuList,
 .menu .menuList .rightMenuList {
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
   flex-direction: column;
 }
@@ -12499,12 +12670,16 @@ nav .open {
   display: none;
 }
 .menu #all:checked ~ .menuList div[id] {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 .menu #starters:checked ~ .menuList div[id=starters],
 .menu #salades:checked ~ .menuList div[id=salades],
 .menu #speciality:checked ~ .menuList div[id=speciality] {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 .menu input[type=radio] {
   display: none;
@@ -12527,6 +12702,9 @@ nav .open {
   }
   .menu label {
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
   }
   .menu label p {
     font-size: 14px;
@@ -12534,7 +12712,7 @@ nav .open {
   }
   .menu .menuList {
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     gap: 30px;
     margin-top: 30px;
   }
@@ -12563,6 +12741,82 @@ nav .open {
   .menu .menuList .rightMenuList > div .menuText p:last-child {
     font-size: 12px;
   }
+  .menuList div[id] {
+    display: none;
+  }
+  #all:checked ~ .menuList div[id] {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #starters:checked ~ .menuList div[id=starters],
+  #salades:checked ~ .menuList div[id=salades],
+  #speciality:checked ~ .menuList div[id=speciality] {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  input[type=radio] {
+    display: none;
+  }
+  .middleMenu input[type=radio]:checked + label {
+    background-color: orange;
+    color: white;
+  }
+}
+@media (max-width: 768px) {
+  .menu .topMenu p {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .menu .topMenu h1, .menu .topMenu .h1 {
+    font-size: 28px;
+  }
+  .menu .topMenu h1 span, .menu .topMenu .h1 span {
+    font-size: 28px;
+  }
+  .menu label {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+  .menu label p {
+    font-size: 15px;
+    padding: 8px 14px;
+  }
+  .menu .menuList {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .menu .menuList .leftMenuList,
+  .menu .menuList .rightMenuList {
+    width: 100%;
+    gap: 20px;
+  }
+  .menu .menuList .leftMenuList > div,
+  .menu .menuList .rightMenuList > div {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    padding: 12px 0;
+  }
+  .menu .menuList .leftMenuList > div img,
+  .menu .menuList .rightMenuList > div img {
+    width: 70px;
+    height: 70px;
+  }
+  .menu .menuList .leftMenuList > div .menuText p:first-child,
+  .menu .menuList .rightMenuList > div .menuText p:first-child {
+    font-size: 16px;
+  }
+  .menu .menuList .leftMenuList > div .menuText p:last-child,
+  .menu .menuList .rightMenuList > div .menuText p:last-child {
+    font-size: 14px;
+  }
 }
 .specials {
   margin-bottom: 30px;
@@ -12583,6 +12837,9 @@ nav .open {
   padding: 6px 12px;
   font-weight: 500;
 }
+.specials .topSpecials p:hover {
+  background-color: rgb(255, 176, 59);
+}
 .specials .topSpecials h1, .specials .topSpecials .h1 {
   font-family: "pacifico", serif;
 }
@@ -12591,13 +12848,10 @@ nav .open {
 }
 .specials .downSpecials {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-direction: column;
 }
 .specials .downSpecials label {
   display: flex;
+  flex-direction: column;
   cursor: pointer;
   padding: 6px 10px;
   margin-right: 5px;
@@ -12651,55 +12905,134 @@ nav .open {
   .specials .topSpecials h1 span, .specials .topSpecials .h1 span {
     font-size: 22px;
   }
-  .specials {
-    /* DOWN SPECIALS */
-  }
   .specials .downSpecials {
     width: 100%;
-    align-items: center;
-    /* LABELS (TABS) */
+    align-items: start;
+    display: flex;
   }
   .specials .downSpecials label {
     padding: 5px 8px;
     margin: 5px 0;
     text-align: center;
+    flex-direction: column;
   }
   .specials .downSpecials label p {
     font-size: 14px;
   }
-  .specials .downSpecials {
-    /* MAKE LABELS STACK VERTICALLY */
-  }
   .specials .downSpecials label p {
     width: 100%;
   }
-  .specials .downSpecials {
-    /* SPECIAL CONTENT AREA */
-  }
-  .specials .downSpecials .rightDownSpecials > div {
-    flex-direction: column;
+  .specials .downSpecials > div[id=""] {
+    display: flex;
+    flex-direction: column-reverse;
     text-align: center;
     gap: 15px;
     margin-top: 20px;
   }
-  .specials .downSpecials .rightDownSpecials .specialContenet h2, .specials .downSpecials .rightDownSpecials .specialContenet .h2 {
+  .specials .downSpecials .specialContenet h2, .specials .downSpecials .specialContenet .h2 {
     font-size: 18px;
   }
-  .specials .downSpecials .rightDownSpecials .specialContenet p {
+  .specials .downSpecials .specialContenet p {
     font-size: 13px;
     line-height: 1.4;
   }
-  .specials .downSpecials .rightDownSpecials img {
+  .specials .downSpecials img {
     width: 150px;
     height: 150px;
     margin: 0 auto;
   }
+  .specials #spec1:checked ~ .rightDownSpecials > div[id=spec1],
+  .specials #spec2:checked ~ .rightDownSpecials > div[id=spec2],
+  .specials #spec3:checked ~ .rightDownSpecials > div[id=spec3],
+  .specials #spec4:checked ~ .rightDownSpecials > div[id=spec4],
+  .specials #spec5:checked ~ .rightDownSpecials > div[id=spec5] .rightDownSpecials {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .specials .topSpecials p {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .specials .topSpecials h1, .specials .topSpecials .h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  .specials .topSpecials h1 span, .specials .topSpecials .h1 span {
+    font-size: 28px;
+  }
+  .specials .downSpecials {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .specials .downSpecials label {
+    padding: 8px 12px;
+    margin: 8px 0;
+    text-align: center;
+    flex-direction: column;
+  }
+  .specials .downSpecials label p {
+    font-size: 16px;
+  }
+  .specials .downSpecials label p {
+    width: 100%;
+  }
+  .specials .downSpecials > div[id=""] {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
+    margin-top: 25px;
+  }
+  .specials .downSpecials .specialContenet h2, .specials .downSpecials .specialContenet .h2 {
+    font-size: 22px;
+  }
+  .specials .downSpecials .specialContenet p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .specials .downSpecials img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  .specials #spec1:checked ~ .rightDownSpecials > div[id=spec1],
+  .specials #spec2:checked ~ .rightDownSpecials > div[id=spec2],
+  .specials #spec3:checked ~ .rightDownSpecials > div[id=spec3],
+  .specials #spec4:checked ~ .rightDownSpecials > div[id=spec4],
+  .specials #spec5:checked ~ .rightDownSpecials > div[id=spec5] {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 .events {
+  position: relative;
   height: 90vh;
   background-image: url(/public/images/images/events-bg.jpg);
   background-size: contain;
   background-position: center;
+  overflow: hidden;
+}
+.events::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  filter: brightness(40%);
+  z-index: 0;
+}
+.events > * {
+  position: relative;
+  z-index: 1;
 }
 .events .slide-content {
   min-height: 100vh;
@@ -12708,6 +13041,15 @@ nav .open {
   justify-content: center;
   gap: 40px;
   padding: 40px;
+}
+.events .slide-content h1, .events .slide-content .h1 {
+  font-family: "pacifico", serif;
+}
+.events .slide-content .carouselEvents .price {
+  font-weight: bolder;
+  text-decoration: underline orange;
+  text-decoration-thickness: 8px;
+  font-size: xx-large;
 }
 .events img {
   width: 40vw;
@@ -12740,6 +13082,10 @@ nav .open {
     padding: 20px;
     gap: 20px;
     min-height: auto;
+    justify-content: start;
+  }
+  .events .slide-content .carouselEvents .price, h1, .h1 {
+    text-align: start;
   }
   .events img {
     width: 100%;
@@ -12754,6 +13100,42 @@ nav .open {
   }
   .events .carouselEvents .check-item {
     justify-content: center;
+    text-align: left;
+  }
+}
+@media (max-width: 768px) {
+  .events {
+    height: auto;
+    background-size: cover;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .events .slide-content {
+    flex-direction: column;
+    padding: 25px;
+    gap: 25px;
+    min-height: auto;
+    justify-content: start;
+  }
+  .events img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .events .carouselEvents {
+    max-width: 100%;
+    text-align: start;
+    gap: 10px;
+  }
+  .events .carouselEvents .price,
+  .events .carouselEvents h1,
+  .events .carouselEvents .h1 {
+    text-align: left;
+  }
+  .events .carouselEvents .check-item {
+    justify-content: flex-start;
     text-align: left;
   }
 }
@@ -12837,42 +13219,101 @@ nav .open {
 }
 
 @media (max-width: 425px) {
+  .bookTable {
+    margin-bottom: 40vw;
+  }
   .bookTable .downBook {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    margin-top: 70px;
+  }
+  .bookTable .downBook .formulaire {
+    height: 100vh;
   }
   .bookTable .downBook .leftDown img {
-    width: 100%;
+    width: 72vw;
     height: 200px;
-    object-fit: cover;
   }
-  .bookTable .formulaire {
+  .downBook {
+    height: 90vh;
+  }
+  .bookTable .downBook .formulaire .firstInput, .secondInput {
     height: auto;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    gap: 20px;
+    gap: 5px;
   }
-  .bookTable .formulaire input {
+  .bookTable .downBook .formulaire input {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 45px;
+    gap: 5px;
   }
   .bookTable .formulaire textarea {
     width: 100%;
     height: 120px;
   }
-  .bookTable .formulaire button {
-    width: 100%;
-    height: 50px;
+  .bookTable .downBook .formulaire .thirdInput button {
+    width: 30vw;
+    height: 8vh;
   }
   .bookTable .formulaire .firstInput,
   .bookTable .formulaire .secondInput,
   .bookTable .formulaire .thirdInput {
     flex-direction: column;
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .bookTable {
+    margin-bottom: 20vw;
+  }
+  .bookTable .downBook {
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px;
+    margin-top: 60px;
+    height: auto;
+  }
+  .bookTable .downBook .leftDown img {
+    width: 90vw;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .bookTable .downBook .formulaire {
+    height: auto;
+    width: 100%;
+  }
+  .bookTable .downBook .formulaire .firstInput,
+  .bookTable .downBook .formulaire .secondInput {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+  }
+  .bookTable .downBook .formulaire input {
+    width: 100%;
+    height: 50px;
+  }
+  .bookTable .formulaire textarea {
+    width: 100%;
+    height: 150px;
+  }
+  .bookTable .downBook .formulaire .thirdInput button {
+    width: 40vw;
+    height: 7vh;
+    font-size: 16px;
+  }
+  .bookTable .formulaire .firstInput,
+  .bookTable .formulaire .secondInput,
+  .bookTable .formulaire .thirdInput {
+    width: 100%;
+    flex-direction: column;
   }
 }
 .galery .topGalery {
@@ -12883,6 +13324,7 @@ nav .open {
   flex-direction: column;
   text-align: center;
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 .galery .topGalery p {
   border-radius: 20px;
@@ -12953,13 +13395,16 @@ nav .open {
   .galery .downGalery {
     padding: 10px;
   }
+  .galery .downGalery .img-box:hover img {
+    transform: scale(1.2);
+  }
   .galery .firstGalery,
   .galery .secondGalery {
     flex-direction: column;
     gap: 15px;
   }
   .galery .img-box {
-    width: 100% !important;
+    width: 80vw !important;
     height: 200px !important;
   }
   .galery .img-box img {
@@ -12984,18 +13429,34 @@ nav .open {
   position: absolute;
   top: -20vw;
 }
+.chefs .cards .firstCard .card-body .icons:hover, .chefs .cards .secCard .card-body .icons:hover, .chefs .cards .thirdcard .card-body .icons:hover {
+  color: rgb(255, 176, 59);
+}
 
 .crew {
-  background-image: url(/public/images/images/testimonials-bg.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 0;
+  overflow: hidden;
+  background: none;
+}
+.crew::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/public/images/images/testimonials-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(40%);
+  z-index: 0;
+}
+.crew > * {
   position: relative;
+  z-index: 1;
 }
 
 #crewCarousel .carousel-inner {
@@ -13163,6 +13624,7 @@ nav .open {
   border: 1px solid darkgray;
 }
 .contact .formul .rightFormul button {
+  align-items: center;
   width: 15vw;
   height: 7vh;
   border: transparent;
@@ -13189,8 +13651,8 @@ nav .open {
     padding-left: 0;
     gap: 25px;
   }
-  .contact .leftFormul {
-    width: 90%;
+  .contact .formul .leftFormul {
+    width: 90vw;
     height: auto;
     padding: 20px;
   }
@@ -13206,7 +13668,7 @@ nav .open {
     width: 100% !important;
     height: 150px;
   }
-  .contact .rightFormul button {
+  .contact .formul .rightFormul button {
     width: 60%;
     height: 50px;
     align-self: center;
@@ -13217,6 +13679,45 @@ nav .open {
   }
   .contact .secFormul {
     gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .contact .formul {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 30px;
+  }
+  .contact .formul .leftFormul {
+    width: 85vw;
+    height: auto;
+    padding: 25px;
+  }
+  .contact .rightFormul {
+    width: 85%;
+    gap: 25px;
+  }
+  .contact .rightFormul input {
+    width: 100% !important;
+    height: 55px;
+    font-size: 16px;
+  }
+  .contact .rightFormul textarea {
+    width: 100% !important;
+    height: 180px;
+    font-size: 16px;
+  }
+  .contact .formul .rightFormul button {
+    width: 45%;
+    height: 55px;
+    align-self: center;
+    font-size: 17px;
+  }
+  .contact .firstFormul {
+    gap: 20px;
+  }
+  .contact .secFormul {
+    gap: 25px;
   }
 }
 footer {
@@ -13300,6 +13801,35 @@ footer .downFooter {
     font-size: 14px;
     text-align: center;
     padding-top: 15px;
+  }
+}
+@media (max-width: 768px) {
+  footer .topFotter {
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+    padding-bottom: 30px;
+  }
+  footer .topFotter > div {
+    width: 100%;
+    gap: 15px;
+  }
+  footer .topFotter i {
+    font-size: 30px;
+  }
+  footer .media {
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+  }
+  footer .media a i {
+    font-size: 26px;
+  }
+  footer .downFooter {
+    margin-top: 30px;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 20px;
   }
 }
 * {

@@ -65,6 +65,9 @@ footer {
     opacity: 0.8;
   }
 }
+
+
+// !version mobile
 @media (max-width: 425px) {
 
     footer .topFotter {
@@ -96,6 +99,45 @@ footer {
         font-size: 14px;
         text-align: center;
         padding-top: 15px;
+    }
+
+}
+
+//! tablet version
+
+@media (max-width: 768px) {
+
+    footer .topFotter {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+        padding-bottom: 30px;
+    }
+
+    footer .topFotter > div {
+        width: 100%;
+        gap: 15px;
+    }
+
+    footer .topFotter i {
+        font-size: 30px;
+    }
+
+    footer .media {
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    footer .media a i {
+        font-size: 26px;
+    }
+
+    footer .downFooter {
+        margin-top: 30px;
+        font-size: 15px;
+        text-align: center;
+        padding-top: 20px;
     }
 
 }

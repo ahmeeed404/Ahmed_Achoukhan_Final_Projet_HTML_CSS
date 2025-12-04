@@ -84,44 +84,55 @@
 
 
 }
-
+//! mobile version
 @media (max-width: 425px) {
-
+   .bookTable{
+    margin-bottom: 40vw;
+   }
     .bookTable .downBook {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
+        margin-top: 70px;
     }
-
+    .bookTable .downBook .formulaire{
+        height: 100vh;
+    }
     .bookTable .downBook .leftDown img {
-        width: 100%;
+        width: 72vw;
         height: 200px;
-        object-fit: cover;
+       
+    }
+    .downBook{
+        height: 90vh;
     }
 
-    .bookTable .formulaire {
+    .bookTable .downBook .formulaire .firstInput,.secondInput {
         height: auto;
         display: flex;
         flex-direction: column;
         padding: 20px;
-        gap: 20px;
+        gap: 5px;
+        
     }
 
-    .bookTable .formulaire input {
-           display: flex;
+    .bookTable .downBook .formulaire input  {
+        display: flex;
         flex-direction: column;
         width: 100%;
         height: 45px;
+        gap: 5px;
     }
+    
 
     .bookTable .formulaire textarea {
         width: 100%;
         height: 120px;
     }
 
-    .bookTable .formulaire button {
-        width: 100%;
-        height: 50px;
+    .bookTable .downBook .formulaire .thirdInput button {
+        width: 30vw;
+        height: 8vh;
     }
 
     .bookTable .formulaire .firstInput,
@@ -129,5 +140,65 @@
     .bookTable .formulaire .thirdInput {
         flex-direction: column;
         width: 100%;
+       
+    }
+}
+//! tablet version
+@media (max-width: 768px) {
+
+    .bookTable {
+        margin-bottom: 20vw;
+    }
+
+    .bookTable .downBook {
+        flex-direction: column;
+        gap: 25px;
+        padding: 30px;
+        margin-top: 60px;
+        height: auto;
+    }
+
+    .bookTable .downBook .leftDown img {
+        width: 90vw;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .bookTable .downBook .formulaire {
+        height: auto;
+        width: 100%;
+    }
+
+    .bookTable .downBook .formulaire .firstInput,
+    .bookTable .downBook .formulaire .secondInput {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .bookTable .downBook .formulaire input {
+        width: 100%;
+        height: 50px;
+    }
+
+    .bookTable .formulaire textarea {
+        width: 100%;
+        height: 150px;
+    }
+
+    .bookTable .downBook .formulaire .thirdInput button {
+        width: 40vw;
+        height: 7vh;
+        font-size: 16px;
+    }
+
+    .bookTable .formulaire .firstInput,
+    .bookTable .formulaire .secondInput,
+    .bookTable .formulaire .thirdInput {
+        width: 100%;
+        flex-direction: column;
     }
 }

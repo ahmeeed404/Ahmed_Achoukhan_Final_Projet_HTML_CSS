@@ -20,6 +20,9 @@
        .card-body{
         position: absolute;
         top: -20vw;
+        .icons:hover{
+            color: $orangeColor;
+        }
        }
       
     }

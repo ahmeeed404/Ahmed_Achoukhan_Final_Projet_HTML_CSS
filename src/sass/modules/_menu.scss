@@ -11,7 +11,7 @@
         padding: 10px;
     }
 
-    /* TOP SECTION */
+
     .topMenu {
         @include display(flex, center, center, 10px);
         flex-direction: column;
@@ -38,12 +38,12 @@
 
 
 
-    /* MENU TABS */
+
 
     label {
         display: flex;
         justify-content: center;
-        flex-direction: row;
+        // flex-direction: row;
         text-align: center;
         margin-top: 25px;
 
@@ -56,6 +56,7 @@
             &:hover {
                 color: $orangeColor;
 
+
             }
         }
     }
@@ -67,14 +68,14 @@
 
 
 
-    /* MENU LIST */
+
     .menuList {
         @include display(flex, center, start, 50px);
         margin-top: 40px;
 
         .leftMenuList,
         .rightMenuList {
-            @include display(flex, start, start, 25px);
+            @include display(flex, center, center, 25px);
             flex-direction: column;
 
             >div {
@@ -105,14 +106,18 @@
 
 
     #all:checked~.menuList div[id] {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: start;
     }
 
 
     #starters:checked~.menuList div[id="starters"],
     #salades:checked~.menuList div[id="salades"],
     #speciality:checked~.menuList div[id="speciality"] {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: start;
     }
 
 
@@ -127,12 +132,12 @@
     }
 }
 
-
+//! mobile version
 @media (max-width: 425px) {
 
     .menu {
 
-        
+
         .topMenu {
             p {
                 font-size: 12px;
@@ -141,7 +146,7 @@
 
             h1 {
                 font-size: 22px;
-                
+
 
                 span {
                     font-size: 22px;
@@ -149,19 +154,23 @@
             }
         }
 
-        
+
         label {
             margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
 
             p {
                 font-size: 14px;
                 padding: 6px 10px;
+
             }
         }
 
         .menuList {
             flex-direction: column;
-            align-items: center;
+            align-items: start;
             gap: 30px;
             margin-top: 30px;
 
@@ -170,7 +179,7 @@
                 width: 100%;
                 gap: 20px;
 
-                > div {
+                >div {
                     width: 90%;
                     margin: auto;
                     gap: 15px;
@@ -188,7 +197,112 @@
 
                         p:last-child {
                             font-size: 12px;
-                            
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .menuList div[id] {
+        display: none;
+    }
+
+
+    #all:checked~.menuList div[id] {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+
+    #starters:checked~.menuList div[id="starters"],
+    #salades:checked~.menuList div[id="salades"],
+    #speciality:checked~.menuList div[id="speciality"] {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+
+    input[type="radio"] {
+        display: none;
+    }
+
+
+    .middleMenu input[type="radio"]:checked+label {
+        background-color: orange;
+        color: white;
+    }
+
+}
+//! tablet version
+
+@media (max-width: 768px) {
+
+    .menu {
+
+
+        .topMenu {
+            p {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+
+            h1 {
+                font-size: 28px;
+
+                span {
+                    font-size: 28px;
+                }
+            }
+        }
+
+
+        label {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 15px;
+
+            p {
+                font-size: 15px;
+                padding: 8px 14px;
+            }
+        }
+
+
+        .menuList {
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 40px;
+
+            .leftMenuList,
+            .rightMenuList {
+                width: 100%;
+                gap: 20px;
+
+                >div {
+                    width: 100%;
+                    display: flex;
+                    gap: 15px;
+                    padding: 12px 0;
+
+                    img {
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    .menuText {
+                        p:first-child {
+                            font-size: 16px;
+                        }
+
+                        p:last-child {
+                            font-size: 14px;
                         }
                     }
                 }

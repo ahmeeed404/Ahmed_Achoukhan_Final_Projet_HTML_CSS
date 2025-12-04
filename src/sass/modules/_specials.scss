@@ -1,10 +1,12 @@
 .specials {
     margin-bottom: 30px;
+    
+
     .topSpecials {
         @include display(flex, center, center, 10px);
         flex-direction: column;
         text-align: center;
-        
+
 
         p {
             border-radius: 20px;
@@ -13,6 +15,9 @@
             width: fit-content;
             padding: 6px 12px;
             font-weight: 500;
+            &:hover{
+                background-color: $orangeColor;
+            }
         }
 
         h1 {
@@ -26,12 +31,14 @@
     }
 
     .downSpecials {
-        @include display(flex, center, center, 10px);
-        flex-direction: column;
+        // @include display(flex, center, center, 10px);
+        display: flex;
+        // flex-direction: row;
 
         label {
             display: flex;
-            // flex-direction: column;
+            
+            flex-direction: column;
             cursor: pointer;
             padding: 6px 10px;
             margin-right: 5px;
@@ -44,16 +51,17 @@
         }
 
         .rightDownSpecials {
+            // display: flex;
+            .specialContenet {
+                display: flex;
+                flex-direction: column;
 
-                .specialContenet {
-                    display: flex;
-                    flex-direction: column;
-
-                    h2 {
-                        font-family: $fontFamily;
-                    }
+                h2 {
+                    font-family: $fontFamily;
                 }
-           
+            }
+            
+
 
             img {
                 width: 200px;
@@ -96,6 +104,9 @@
 
 
 }
+
+
+//! mobile version
 @media (max-width: 425px) {
 
     .specials {
@@ -104,6 +115,7 @@
             p {
                 font-size: 12px;
                 padding: 5px 10px;
+
             }
 
             h1 {
@@ -116,32 +128,33 @@
             }
         }
 
-        /* DOWN SPECIALS */
+
         .downSpecials {
             width: 100%;
-            align-items: center;
+            align-items: start;
+            display: flex;
+            
 
-            /* LABELS (TABS) */
             label {
                 padding: 5px 8px;
                 margin: 5px 0;
                 text-align: center;
-
+                flex-direction: column;
                 p {
                     font-size: 14px;
                 }
             }
 
-            /* MAKE LABELS STACK VERTICALLY */
+
             label p {
                 width: 100%;
             }
 
-            /* SPECIAL CONTENT AREA */
-            .rightDownSpecials {
+           
 
-                > div {
-                    flex-direction: column;
+                >div[id=""] {
+                    display: flex;
+                    flex-direction: column-reverse;
                     text-align: center;
                     gap: 15px;
                     margin-top: 20px;
@@ -165,5 +178,97 @@
                 }
             }
         }
+     .specials #spec1:checked~.rightDownSpecials>div[id=spec1],
+            .specials #spec2:checked~.rightDownSpecials>div[id=spec2],
+            .specials #spec3:checked~.rightDownSpecials>div[id=spec3],
+            .specials #spec4:checked~.rightDownSpecials>div[id=spec4],
+            .specials #spec5:checked~.rightDownSpecials>div[id=spec5] .rightDownSpecials {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: start;
+                align-items: center;
+            }
+    }
+
+//! tablet version
+
+    @media (max-width: 768px) {
+
+    .specials {
+
+        .topSpecials {
+            p {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+
+            h1 {
+                font-size: 28px;
+                line-height: 1.3;
+
+                span {
+                    font-size: 28px;
+                }
+            }
+        }
+
+        .downSpecials {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+
+            label {
+                padding: 8px 12px;
+                margin: 8px 0;
+                text-align: center;
+                flex-direction: column;
+
+                p {
+                    font-size: 16px;
+                }
+            }
+
+            label p {
+                width: 100%;
+            }
+
+            > div[id=""] {
+                display: flex;
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 20px;
+                margin-top: 25px;
+            }
+
+            .specialContenet {
+                h2 {
+                    font-size: 22px;
+                }
+
+                p {
+                    font-size: 15px;
+                    line-height: 1.5;
+                }
+            }
+
+            img {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    
+    .specials #spec1:checked ~ .rightDownSpecials > div[id="spec1"],
+    .specials #spec2:checked ~ .rightDownSpecials > div[id="spec2"],
+    .specials #spec3:checked ~ .rightDownSpecials > div[id="spec3"],
+    .specials #spec4:checked ~ .rightDownSpecials > div[id="spec4"],
+    .specials #spec5:checked ~ .rightDownSpecials > div[id="spec5"] {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: center;
     }
 }

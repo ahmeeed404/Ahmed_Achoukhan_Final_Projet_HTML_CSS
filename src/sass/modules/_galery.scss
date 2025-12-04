@@ -4,6 +4,7 @@
         flex-direction: column;
         text-align: center;
         margin-top: 50px;
+        margin-bottom: 20px;
 
         p {
             border-radius: 20px;
@@ -79,10 +80,14 @@ input[type="radio"] {
     display: block;
 }
 }
+//! mobile version
 @media (max-width: 425px) {
 
     .galery .downGalery {
         padding: 10px;
+        .img-box:hover img {
+                transform: scale(1.2);
+            }
     }
 
     .galery .firstGalery,
@@ -92,9 +97,10 @@ input[type="radio"] {
     }
 
     .galery .img-box {
-        width: 100% !important;
+        width: 80vw !important;
         height: 200px !important;
     }
+     
 
     .galery .img-box img {
         object-fit: cover;

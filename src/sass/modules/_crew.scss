@@ -1,15 +1,36 @@
 .crew {
-    background-image: url(/public/images/images/testimonials-bg.jpg);
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  overflow: hidden; 
+
+  background: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/public/images/images/testimonials-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0;
+
+    filter: brightness(40%);
+
+    z-index: 0;
+  }
+
+  
+  > * {
     position: relative;
+    z-index: 1;
+  }
 }
+
+
 
 
 

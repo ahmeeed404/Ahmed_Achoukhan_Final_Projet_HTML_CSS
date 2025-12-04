@@ -1,12 +1,14 @@
-.whyUs{
+.whyUs {
     // background-color: aquamarine;
     margin-top: 30px;
-    .topWhy{
-        @include display(flex,center,center,5px);
+
+    .topWhy {
+        @include display(flex, center, center, 5px);
         flex-direction: column;
         margin-bottom: 10px;
-        p{
-            border-radius:  20px;
+
+        p {
+            border-radius: 20px;
             background-color: rgb(255, 247, 235);
             color: $orangeColor;
             width: 5vw;
@@ -15,21 +17,27 @@
 
 
         }
-        h1{
-            span{
+
+        h1 {
+            font-family: $fontFamily;
+
+            span {
                 color: $orangeColor;
             }
         }
     }
 
-    .downWhy{
-        @include display(flex,center,center,15px);
-        
-        .firstCard, .secCard, .thirdCard{
+    .downWhy {
+        @include display(flex, center, center, 15px);
+
+        .firstCard,
+        .secCard,
+        .thirdCard {
             background-color: rgb(250, 250, 250);
             padding: 20px;
             height: 35vh;
-            &:hover{
+
+            &:hover {
                 background-color: $orangeColor;
                 transform: translateY(-5px);
                 color: white;
@@ -37,9 +45,11 @@
         }
     }
 }
+
 @media (max-width: 425px) {
     .whyUs {
         margin-top: 15vw;
+
         .topWhy {
             gap: 5px;
 
@@ -79,7 +89,58 @@
 
                 p {
                     font-size: 14px;
-                    
+
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .whyUs {
+        margin-top: 10vw;
+
+        .topWhy {
+            gap: 8px;
+
+            p {
+                width: 28vw;
+                height: 4.5vh;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 28px;
+                text-align: center;
+
+                span {
+                    font-size: 28px;
+                }
+            }
+        }
+
+        .downWhy {
+            flex-direction: column;
+            gap: 20px;
+            width: 85%;
+            margin: auto;
+      
+            .firstCard,
+            .secCard,
+            .thirdCard {
+                width: 100%;
+                padding: 20px;
+                height: auto;
+            
+                
+
+                h2 {
+                    font-size: 26px;
+                }
+
+                p {
+                    font-size: 16px;
                 }
             }
         }

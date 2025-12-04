@@ -49,7 +49,7 @@
             <input type="checkbox" id="check">
 
             <div class="open">
-                <label for="check" ><i class="bi bi-list"></i></label>
+                <label for="check"><i class="bi bi-list"></i></label>
             </div>
             <div class="close">
                 <label for="check"><i class="bi bi-x-lg"></i></label>
@@ -177,7 +177,7 @@
                 <a href="#" class="close"><i class="bi bi-x-lg"></i></a>
                 <h2>My Media Gallery</h2>
 
-                <!-- CAROUSEL -->
+
                 <div class="carousel">
                     <!-- 9 SLIDES -->
                     <input type="radio" name="slides" id="slide1" checked>
@@ -193,9 +193,12 @@
                     <div class="carousel-inner">
 
                         <div class="item">
-                            <video controls>
-                                <source src="yourvideo.mp4" type="video/mp4">
-                            </video>
+                            <iframe width="560" height="315" 
+                                src="https://www.youtube.com/embed/tWoo8i_VkvI?si=GqmGUHqKvg5MSxKz"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
                         </div>
 
                         <div class="item"><img src="./public/images/images/gallery/gallery-1.jpg" alt=""></div>
@@ -252,7 +255,8 @@
                     <div>
                         <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br>
                             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                            <br> occaecat cupidatat non proident.</p>
+                            <br> occaecat cupidatat non proident.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -551,7 +555,7 @@
                         <img src="./public/images/images/events-slider/events-slider-1.jpg" alt="">
                         <div class="carouselEvents">
                             <h1>Birthday Parties</h1>
-                            <p>189</p>
+                            <p class="price"><strong>$189</strong> </p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
                             <div class="check-item">
@@ -578,7 +582,7 @@
                         <img src="./public/images/images/events-slider/events-slider-2.jpg" alt="">
                         <div class="carouselEvents">
                             <h1>Private Parties</h1>
-                            <p>250</p>
+                            <p class="price"><strong>$250</strong></p>
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br> Laudantiumet.</p>
 
                             <div class="check-item">
@@ -606,7 +610,7 @@
                         <img src="./public/images/images/events-slider/events-slider-3.jpg" alt="">
                         <div class="carouselEvents">
                             <h1>Custom Parties</h1>
-                            <p>120</p>
+                            <p class="price"><strong>$120</strong></p>
                             <p>Another description lorem ipsum dolor sit amet.</p>
 
                             <div class="check-item">
@@ -819,7 +823,7 @@
 
     <!-- crow section -->
     <section class="crew position-relative">
-        <div id="crewCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="5000">
+        <div id="crewCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="2000">
 
 
             <div class="carousel-indicators">

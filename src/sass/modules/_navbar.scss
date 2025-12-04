@@ -8,9 +8,9 @@ nav {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(113, 108, 108, 0.9);
+    background-color: rgba(128, 128, 128, 0.5);
     backdrop-filter: blur(6px);
-    // transition:background 0.3s ease;
+    transition:background 0.3s ease;
 
     .topNav {
         @include display(flex, space-between, center, 0);
@@ -61,7 +61,7 @@ nav {
 
                 h1 {
                     color: white;
-
+                    font-family: $fontFamily;
                     margin: 0;
                 }
             }
@@ -130,7 +130,7 @@ nav {
     }
 }
 
-
+//! mobile version
 @media (max-width: 425px) {
 
     
@@ -150,13 +150,15 @@ nav {
         display: none;
     }
 
-    
+    nav .downNav .rightDownNv a{
+        color: black;
+    }
     #check:checked ~ .rightDownNv {
         display: flex;
         flex-direction: column;
         gap: 20px;
         background: #f5eded;
-        color: black;
+        
         position: absolute;
         top: 70px;
         left: 0;
@@ -199,5 +201,81 @@ nav {
         font-weight: bolder;
         z-index: 1000;
         display: block;     
+    }
+}
+
+//! tablet version
+@media (max-width: 768px) {
+
+    nav {
+        height: auto;
+        padding: 15px 0;
+        position: relative;
+    }
+
+   
+    nav .topNav .leftTopNav {
+        display: none;
+    }
+
+    
+    nav .downNav .rightDownNv {
+        display: none;
+    }
+
+    nav .downNav .rightDownNv a {
+        color: black;
+    }
+
+   
+    #check:checked ~ .rightDownNv {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        background: #f5eded;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 30px 0;
+        text-align: center;
+        z-index: 100;
+    }
+
+    
+    nav .topNav .rightTopNav button {
+        width: 25vw;      
+        height: 6vh;
+        margin-left: auto;
+        display: block;
+    }
+
+    
+    .open {
+        display: block !important;
+    }
+
+    .close {
+        display: none;
+    }
+
+    #check:checked ~ .open {
+        display: none !important;
+    }
+
+    #check:checked ~ .close {
+        display: block;
+    }
+
+    .open label,
+    .close label {
+        font-size: 34px;
+        cursor: pointer;
+        position: absolute;
+        right: 30px;
+        top: -15px;
+        font-weight: bolder;
+        z-index: 1000;
+        display: block;
     }
 }

@@ -92,6 +92,7 @@
             display: flex;
             flex-direction: column;
             gap: 25px;
+
             input {
                 width: 20vw;
                 height: 6vh;
@@ -106,6 +107,7 @@
             }
 
             button {
+                align-items: center;
                 width: 15vw;
                 height: 7vh;
                 border: transparent;
@@ -118,10 +120,12 @@
                 display: flex;
                 gap: 20px;
             }
-            .secFormul{
-                input{
+
+            .secFormul {
+                input {
                     width: 42vw;
                 }
+
                 display: flex;
                 flex-direction: column;
                 gap: 25px;
@@ -132,6 +136,8 @@
 
 
 }
+
+//! mobile version
 @media (max-width: 425px) {
 
     .contact .formul {
@@ -140,8 +146,8 @@
         gap: 25px;
     }
 
-    .contact .leftFormul {
-        width: 90%;
+    .contact .formul .leftFormul {
+        width: 90vw;
         height: auto;
         padding: 20px;
     }
@@ -161,7 +167,7 @@
         height: 150px;
     }
 
-    .contact .rightFormul button {
+    .contact .formul .rightFormul button  {
         width: 60%;
         height: 50px;
         align-self: center;
@@ -174,6 +180,57 @@
 
     .contact .secFormul {
         gap: 20px;
+    }
+
+}
+
+//! tablet version
+@media (max-width: 768px) {
+
+    .contact .formul {
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+        gap: 30px;
+    }
+
+    .contact .formul .leftFormul {
+        width: 85vw;
+        height: auto;
+        padding: 25px;
+    }
+
+    .contact .rightFormul {
+        width: 85%;
+        gap: 25px;
+    }
+
+    .contact .rightFormul input {
+        width: 100% !important;
+        height: 55px;
+        font-size: 16px;
+    }
+
+    .contact .rightFormul textarea {
+        width: 100% !important;
+        height: 180px;
+        font-size: 16px;
+    }
+
+    .contact .formul .rightFormul button {
+        width: 45%;
+        height: 55px;
+        align-self: center;
+        font-size: 17px;
+    }
+
+    .contact .firstFormul {
+        
+        gap: 20px;
+    }
+
+    .contact .secFormul {
+        gap: 25px;
     }
 
 }
